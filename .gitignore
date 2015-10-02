@@ -44,3 +44,8 @@ build/Release
 ### Sass ###
 .sass-cache/
 *.css.map
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
