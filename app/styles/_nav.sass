@@ -1,0 +1,42 @@
+.navbar-brand-centered
+    position: absolute
+    left: 50%
+    display: block
+    width: 160px
+    text-align: center
+    background:
+        image: url("../images/my-pee.svg")
+        repeat: no-repeat
+        position: center
+
+.navbar
+    border-radius: 0px
+
+    .container
+        padding: 0px
+        width: 100%
+
+        .navbar-toggle
+            border: none
+            cursor: pointer
+
+            &:hover
+                background-color: transparent
+
+                .icon-bar
+                    background-color: $accent-color
+
+            .icon-bar
+                background-color: white
+
+.navbar-nav
+    li
+        a
+            padding-bottom: 10px
+
+            &:hover
+                border-bottom: 2px solid $accent-color
+
+.navbar > .container .navbar-brand-centered,
+.navbar > .container-fluid .navbar-brand-centered
+    margin-left: -80px

@@ -1,77 +1,9 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
-
-//nav bar
-$navbar-default-color: #3F51B5 !default;
-$navbar-default-bg: #3F51B5 !default;
-$navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
-$navbar-default-link-color: #fff !default;
-$navbar-default-link-hover-color: #C5CAE9 !default;
-$navbar-default-link-active-color: #F50057 !default;
-$bg-color: #C5CAE9 !default;
-$accent-color: #FF4081 !default;
-
-// bower:scss
+@import "_variables.sass";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "_nav.sass";
 
-// endbower
 body {
     background: $bg-color;
-}
-
-.navbar-brand-centered {
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 160px;
-    text-align: center;
-    background-image: url("../images/my-pee.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.navbar {
-    border-radius: 0px;
-
-    .container {
-        padding: 0px;
-        width: 100%;
-
-        .navbar-toggle {
-            border: none;
-            cursor: pointer;
-
-            &:hover {
-                background-color: transparent;
-
-                .icon-bar {
-                    background-color: $accent-color;
-                }
-            }
-
-            .icon-bar {
-                background-color: white;
-            }
-        }
-    }
-}
-
-.navbar-nav {
-    li {
-        a {
-            padding-bottom: 10px;
-
-            &:hover {
-                border-bottom: 2px solid $accent-color;
-            }
-        }
-    }
-}
-
-.navbar > .container .navbar-brand-centered,
-.navbar > .container-fluid .navbar-brand-centered {
-    margin-left: -80px;
 }
