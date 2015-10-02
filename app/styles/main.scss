@@ -1,4 +1,16 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+//nav bar
+$navbar-default-color:             #3F51B5 !default;
+$navbar-default-bg:                #3F51B5 !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-color:        #fff !default;
+$navbar-default-link-hover-color:  #C5CAE9 !default;
+$navbar-default-link-active-color: #F50057 !default;
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
