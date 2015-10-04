@@ -3,24 +3,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "utils/_variables.sass";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "modules/_nav.sass";
+@import "modules/_board.scss";
+
 
 body {
     background: $bg-color;
-}
-
-.panel{
-  margin: 15px 15px;
-  width: 22%;
-  min-width: 200px;
-  float: left;
-}
-
-.panel-heading a:after {
-    font-family:'Glyphicons Halflings';
-    content:"\e114";
-    float: right;
-    color: grey;
-}
-.panel-heading a.collapsed:after {
-    content:"\e080";
 }
