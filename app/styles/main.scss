@@ -7,3 +7,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 body {
     background: $bg-color;
 }
+
+.panel{
+  margin: 15px 15px;
+  width: 300px;
+  float: left;
+}
