@@ -8,7 +8,24 @@
         image: url("../images/my-pee.svg")
         repeat: no-repeat
         position: center
+    @media (max-width: $grid-float-breakpoint-max) 
+        left: 0 
+        width: 70px
+        padding: 10px 10px   
 
+.navbar-right
+    float: right
+    @media (max-width: $grid-float-breakpoint-max) 
+        clear: both
+        float: left
+
+.container,
+.container-fluid 
+    .navbar-header,
+    .navbar-collapse
+        margin-right: 0
+        margin-left: 0
+    
 .navbar
     border-radius: 0px
 
