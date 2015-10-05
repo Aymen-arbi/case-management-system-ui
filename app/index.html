@@ -64,23 +64,23 @@
         </div>
       </div>
     </div> -->
-    <accordion close-others="oneAtATime">
-      <accordion-group is-open="status.open" class="panel-primary workItem">
-      <accordion-heading ng-controller = "WorkitemcontrollerCtrl">
-      <div class="workItemInfo">
-        Title !<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"> </i>
-        <progressbar class="workItemStatus" animate="false" value="dynamic" type="success">
-          <b>{{dynamic}}%</b></progressbar>
-        </div>
-        <div class="workItemInfo">
-          <p class="workItemName workItemStatusPanel">Blackmore Andersson</p>
-          <p class="workItemPrio workItemStatusPanel">Prio : Hight</p>
-        </div>
-      </accordion-heading>
-      <h4>Descritpion:</h4>
-      <p>This is just some content to illustrate fancy headings.</p>
-    </accordion-group>
-  </accordion>
+<!--     '<accordion close-others="oneAtATime">'+
+    '<accordion-group is-open="status.open" class="panel-primary workItem">'+
+      '<accordion-heading ng-controller = "WorkitemcontrollerCtrl">'+
+      '<div class="workItemInfo">Title !'+
+      '<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"> </i>'+'
+        '<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success">
+          <b>{{dynamic}}%</b></progressbar>'+
+        '</div>'+
+        '<div class="workItemInfo">'+
+          '<p class="workItemName workItemStatusPanel">Blackmore Andersson</p>'+
+          '<p class="workItemPrio workItemStatusPanel">Prio : Hight</p>'+
+        '</div>'+
+      '</accordion-heading>'+
+      '<h4>Descritpion:</h4>'+
+      '<p>This is just some content to illustrate fancy headings.</p>'+
+    '</accordion-group>'+
+  '</accordion>' -->
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->

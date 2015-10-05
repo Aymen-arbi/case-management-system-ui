@@ -1,5 +1,5 @@
 .workItem{
-	width:200px;
+	width:220px;
 	float: left;
 
 }
@@ -17,6 +17,7 @@
 .workItemStatus{	
 	width :50%;
 	float:right;
+  	transition: width 1s ease-in-out; 
 }
 .workItemPrio{
 	width: 40%;

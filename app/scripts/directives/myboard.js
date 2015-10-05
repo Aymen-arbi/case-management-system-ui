@@ -18,7 +18,29 @@ angular.module('caseManagementSystemUiApp')
 				'</h4> ' +
 				'</div>' +
 				'<div id="collapseToDo" class="panel-collapse collapse in">' +
-				'<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada a nunc nec egestas. Curabitur aliquet venenatis felis a vulputate. In placerat viverra massa, convallis efficitur sem ultrices non. Vivamus auctor justo sed felis maximus laoreet. Phasellus at nisi non dolor ultricies pretium. Vivamus feugiat at turpis sed aliquet. Aliquam luctus vehicula mauris, id pretium lectus accumsan mollis. Praesent commodo, ipsum eu facilisis placerat, odio neque auctor elit, ac tincidunt sapien sem ac dui. Praesent porta lectus nec leo auctor luctus at malesuada ex. Sed at mauris cursus, sodales sem quis, ultricies lorem. Nullam eros quam, vestibulum ut tellus egestas, pharetra sollicitudin dui. Aenean vel dui feugiat, dignissim justo eget, convallis enim. Fusce eget consequat diam, vitae dictum enim. Phasellus vitae laoreet purus. Vivamus bibendum, mi a feugiat sodales, ex velit ullamcorper ipsum, a vehicula neque nisi eu urna. Etiam mattis mi quis varius sollicitudin. Donec blandit lacinia nulla, vitae gravida est accumsan ac. ' +
+				'<div class="panel-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada a nunc nec egestas. Curabitur aliquet venenatis felis a vulputate. In placerat viverra massa, convallis efficitur sem ultrices non</p> ' +
+
+
+				'<accordion close-others="oneAtATime">' +
+				'<accordion-group is-open="status.open" class="panel-danger workItem">' +
+				'<accordion-heading ng-controller = "WorkitemcontrollerCtrl">' +
+				'<div class="workItemInfo">Title !' +
+				'<i class="pull-right glyphicon" ng-class="{\'glyphicon-chevron-down\': status.open, \'glyphicon-chevron-right\': !status.open}"> </i>' +
+				'<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success">' +
+				' <b>{{dynamic}}%</b></progressbar>' +
+				'</div>' +
+				'<div class="workItemInfo">' +
+				'<p class="workItemName workItemStatusPanel">Aymen Arbi</p>' +
+				'<p class="workItemPrio workItemStatusPanel">Prio : Hight</p>' +
+				'</div>' +
+				'</accordion-heading>' +
+				'<h4>Descritpion:</h4>' +
+				'<p>This is just some content to illustrate fancy headings.</p>' +
+				'</accordion-group>' +
+				'</accordion>' +
+
+
+
 				'</div>' +
 				'</div>' +
 				'</div>' +
