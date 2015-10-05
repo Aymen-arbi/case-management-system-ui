@@ -1,0 +1,30 @@
+.workItem{
+	width:200px;
+	float: left;
+
+}
+.workItemInfo{
+	margin-bottom:3px;
+	height:30px;
+	p{
+		margin-bottom:0;
+	}
+}
+.workItemStatusPanel{
+	font-size: 13px;
+	font-weight: 300;
+}
+.workItemStatus{	
+	width :50%;
+	float:right;
+}
+.workItemPrio{
+	width: 40%;
+	float:right;
+}
+.workItemName{
+	float : left;
+	width: 50%;
+	overflow:scroll;
+}
+

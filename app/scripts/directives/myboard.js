@@ -11,7 +11,7 @@ angular.module('caseManagementSystemUiApp')
 		return {
 			template: '<div>' +
 
-				'<div class="panel panel-primary" id="panelToDo">' +
+				'<div class="panel panel-primary panel-board" id="panelToDo">' +
 				'<div class="panel-heading">' +
 				'<h4 class="panel-title">' +
 				'<a data-toggle="collapse" data-target="#collapseToDo"> To Do </a>' +
@@ -23,7 +23,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div>' +
 				'</div>' +
 
-				'<div class = "panel panel-info" id = "panelInProgress">' +
+				'<div class = "panel panel-info panel-board" id = "panelInProgress">' +
 				'<div class = "panel-heading" >' +
 				'<h4 class = "panel-title" >' +
 				'<a data-toggle = "collapse" data-target="#collapseInProgress"> In Progress </a>' +
@@ -35,7 +35,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div>' +
 				'</div>' +
 
-				'<div class = "panel panel-warning" id = "panelToTest">' +
+				'<div class = "panel panel-warning panel-board" id = "panelToTest">' +
 				'<div class = "panel-heading">' +
 				'<h4 class = "panel-title">' +
 				'<a data-toggle = "collapse" data-target = "#collapseToTest"> To Test </a></h4>' +
@@ -45,7 +45,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div >' +
 				'</div>' +
 
-				'<div class = "panel panel-success" id = "panelDone">' +
+				'<div class = "panel panel-success panel-board" id = "panelDone">' +
 				'<div class = "panel-heading">' +
 				'<h4 class = "panel-title">' +
 				'<a data-toggle = "collapse" data-target = "#collapseDone"> Done </a></h4>' +
