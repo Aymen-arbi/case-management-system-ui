@@ -5,7 +5,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "modules/_nav.sass";
 @import "modules/_board.scss";
 
-
 body {
     background: $bg-color;
+}
+
+.collapse-width {
+    height: auto;
+
+    -webkit-transition: width 2.0s ease;
+    -moz-transition: width 2.0s ease;
+    -o-transition: width 2.0s ease;
+    transition: width 2.0s ease;
+
+	-webkit-transition: min-width 2.0s ease;
+    -moz-transition: min-width 2.0s ease;
+    -o-transition: min-width 2.0s ease;
+    transition: min-width 2.0s ease;
+
+    transition-delay: 1.0s;
+
+	min-width: 100px;
+    width: 8%;
 }

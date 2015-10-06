@@ -1,0 +1,12 @@
+<div class="panel {{classesString}}" id="panelToDo" ng-class="{'collapse-width': toggle}"> 
+	<div class="panel-heading"> 
+		<h4 class="panel-title" ng-click="toggleNow()"> 
+			<a data-toggle="collapse" data-target="#{{title}}" > {{title}} </a> 
+		</h4>  
+	</div> 
+	<div id="{{title}}" class="panel-collapse collapse in"> 
+		<div class="panel-body">
+			<ng-transclude></ng-transclude>
+		</div> 
+	</div> 
+</div>
