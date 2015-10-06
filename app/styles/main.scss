@@ -14,17 +14,17 @@ body {
 .collapse-width {
     height: auto;
 
-    -webkit-transition: width 1s ease;
-    -moz-transition: width 1s ease;
-    -o-transition: width 1s ease;
-    transition: width 1s ease;
+    -webkit-transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    -o-transition: width 0.5s ease;
+    transition: width 0.5s ease;
 
-	-webkit-transition: min-width 1s ease;
-    -moz-transition: min-width 1s ease;
-    -o-transition: min-width 1s ease;
-    transition: min-width 1s ease;
+	-webkit-transition: min-width 0.5s ease;
+    -moz-transition: min-width 0.5s ease;
+    -o-transition: min-width 0.5s ease;
+    transition: min-width 0.5s ease;
 
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 
 	min-width: 100px;
     width: 8%;
