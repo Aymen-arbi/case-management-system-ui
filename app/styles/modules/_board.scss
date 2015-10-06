@@ -5,17 +5,17 @@
   float: left;
 }
 
-.panel-heading a{
+.panel-heading-board a{
   cursor: pointer;
-  // &:after {
-  //   font-family:'Glyphicons Halflings';
-  //   content:"\e114";
-  //   float: right;
-  //   color: $navbar-default-link-hover-color;
-  // }
+  &:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: $navbar-default-link-hover-color;
+  }
 }
 
-.panel-heading a.collapsed:after {
+.panel-heading-board a.collapsed:after {
     content:"\e080";
     cursor:pointer;
 }

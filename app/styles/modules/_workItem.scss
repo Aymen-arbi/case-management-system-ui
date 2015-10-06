@@ -1,31 +1,42 @@
 .workItem{
 	width:220px;
 	float: left;
-
 }
+
 .workItemInfo{
 	margin-bottom:3px;
 	height:30px;
 	p{
+		font-size: 13px;
+		font-weight: 300;
 		margin-bottom:0;
 	}
+	i{
+		margin-left:6px;
+	}
 }
-.workItemStatusPanel{
-	font-size: 13px;
-	font-weight: 300;
-}
+
 .workItemStatus{	
 	width :50%;
 	float:right;
-  	transition: width 1s ease-in-out; 
 }
+
 .workItemPrio{
 	width: 40%;
 	float:right;
 }
+
 .workItemName{
 	float : left;
-	width: 50%;
+	width: 60%;
 	overflow:scroll;
+}
+
+.panel-body h4{
+	font-size: 16px;
+}
+
+.panel-body p{
+	font-size: 14px;
 }
 

@@ -12,7 +12,7 @@ angular.module('caseManagementSystemUiApp')
 			template: '<div>' +
 
 				'<div class="panel panel-primary panel-board" id="panelToDo">' +
-				'<div class="panel-heading">' +
+				'<div class="panel-heading panel-heading-board">' +
 				'<h4 class="panel-title">' +
 				'<a data-toggle="collapse" data-target="#collapseToDo"> To Do </a>' +
 				'</h4> ' +
@@ -30,8 +30,8 @@ angular.module('caseManagementSystemUiApp')
 				' <b>{{dynamic}}%</b></progressbar>' +
 				'</div>' +
 				'<div class="workItemInfo">' +
-				'<p class="workItemName workItemStatusPanel">Aymen Arbi</p>' +
-				'<p class="workItemPrio workItemStatusPanel">Prio : Hight</p>' +
+				'<p class="workItemName">Aymen Arbi</p>' +
+				'<p class="workItemPrio">Prio : Hight</p>' +
 				'</div>' +
 				'</accordion-heading>' +
 				'<h4>Descritpion:</h4>' +
@@ -46,7 +46,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div>' +
 
 				'<div class = "panel panel-info panel-board" id = "panelInProgress">' +
-				'<div class = "panel-heading" >' +
+				'<div class = "panel-heading panel-heading-board" >' +
 				'<h4 class = "panel-title" >' +
 				'<a data-toggle = "collapse" data-target="#collapseInProgress"> In Progress </a>' +
 				'</h4>' +
@@ -58,7 +58,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div>' +
 
 				'<div class = "panel panel-warning panel-board" id = "panelToTest">' +
-				'<div class = "panel-heading">' +
+				'<div class = "panel-heading panel-heading-board">' +
 				'<h4 class = "panel-title">' +
 				'<a data-toggle = "collapse" data-target = "#collapseToTest"> To Test </a></h4>' +
 				'</div> <div id = "collapseToTest" class = "panel-collapse collapse in">' +
@@ -68,7 +68,7 @@ angular.module('caseManagementSystemUiApp')
 				'</div>' +
 
 				'<div class = "panel panel-success panel-board" id = "panelDone">' +
-				'<div class = "panel-heading">' +
+				'<div class = "panel-heading panel-heading-board">' +
 				'<h4 class = "panel-title">' +
 				'<a data-toggle = "collapse" data-target = "#collapseDone"> Done </a></h4>' +
 				'</div>' +

@@ -9,5 +9,5 @@
  */
 angular.module('caseManagementSystemUiApp')
 	.controller('WorkitemcontrollerCtrl', function ($scope) {
-		$scope.dynamic = 80;
+		$scope.dynamic = 50;
 	});
