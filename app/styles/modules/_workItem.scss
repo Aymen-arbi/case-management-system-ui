@@ -1,0 +1,48 @@
+.workItem{
+	margin:auto;
+	width:99%;
+}
+
+.workItemInfo{
+	margin:auto;
+	margin-bottom:3px;
+	height:20px;
+	white-space: nowrap;
+    overflow-y: hidden;
+	p{
+		font-size: 13px;
+		font-weight: 300;
+		margin-bottom:0;
+	}
+}
+
+.workItemStatus{	
+	width :40%;
+	float:right;
+	height:14px;
+	margin-top: 2px;
+	.progress-bar{
+		line-height: 13px;
+		font-size:11px;
+	}
+}
+
+.workItemPrio{
+	width: 40%;
+	float:right;
+}
+
+.workItemName{
+	float : left;
+	width: 60%;
+	overflow:scroll;
+}
+
+.panel-body h4{
+	font-size: 14px;
+}
+
+.panel-body p{
+	font-size: 13px;
+}
+

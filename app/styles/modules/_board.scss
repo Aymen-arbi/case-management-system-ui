@@ -1,11 +1,12 @@
-.panel{
+.panel-board{
   margin: 15px 15px;
-  width: 22%;
-  min-width: 250px;
+  width: 19%;
+  // min-width: 20px;
   float: left;
+  margin-top:60px;
 }
 
-.panel-heading a{
+.panel-heading-board a{
   cursor: pointer;
   &:after {
     font-family:'Glyphicons Halflings';
@@ -15,7 +16,7 @@
   }
 }
 
-.panel-heading a.collapsed:after {
+.panel-heading-board a.collapsed:after {
     content:"\e080";
     cursor:pointer;
 }
