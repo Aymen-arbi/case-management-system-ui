@@ -20,3 +20,27 @@
     content:"\e080";
     cursor:pointer;
 }
+
+.collapse-width {
+    height: auto;
+    transition-delay: 0.3s;
+
+  min-width: 100px;
+    width: 8%;
+}
+
+.panel {
+  transition: all 0.7s ease;
+}
+
+.text-overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

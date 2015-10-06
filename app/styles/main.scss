@@ -1,47 +1,12 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 @import "utils/_variables.sass";
+@import "modules/_board.scss";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "modules/_nav.sass";
-@import "modules/_board.scss";
 @import "modules/_workItem.scss";
 @import "layout/_main-app.scss";
 
 body {
     background: $bg-color;
-}
-
-.collapse-width {
-    height: auto;
-
-    -webkit-transition: width 0.5s ease;
-    -moz-transition: width 0.5s ease;
-    -o-transition: width 0.5s ease;
-    transition: width 0.5s ease;
-
-	-webkit-transition: min-width 0.5s ease;
-    -moz-transition: min-width 0.5s ease;
-    -o-transition: min-width 0.5s ease;
-    transition: min-width 0.5s ease;
-
-    transition-delay: 0.3s;
-
-	min-width: 100px;
-    width: 8%;
-}
-
-.panel {
-	transition: all 1.5s ease;
-}
-
-.text-overflow-ellipsis {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.no-wrap {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
