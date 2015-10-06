@@ -47,41 +47,6 @@
 
   <my-board></my-board>
 
-<!--   <div class="panel panel-primary" id="panelWorkItem" ng-controller = "WorkitemcontrollerCtrl">
-    <div class="panel-heading">
-      <div class="workItemInfo">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-target="#collapseWorkItem"> To Do </a>
-          <progressbar class="workItemStatus" animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar></div>
-          <div class="workItemInfo">
-            <p class="workItemName">Blackmore Andersson</p>
-            <p class="workItemPrio">Prio : hight</p>
-          </div>
-        </h4> 
-      </div>
-      <div id="collapseWorkItem" class="panel-collapse collapse in">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada a nunc nec egestas. Curabitur aliquet venenatis felis a vulputate. In placerat viverra massa, convallis efficitur sem ultrices non. Vivamus auctor justo sed felis maximus laoreet. Phasellus at nisi non dolor ultricies pretium. Vivamus feugiat at turpis sed aliquet. Aliquam luctus vehicula mauris 
-        </div>
-      </div>
-    </div> -->
-<!--     '<accordion close-others="oneAtATime">'+
-    '<accordion-group is-open="status.open" class="panel-primary workItem">'+
-      '<accordion-heading ng-controller = "WorkitemcontrollerCtrl">'+
-      '<div class="workItemInfo">Title !'+
-      '<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"> </i>'+'
-        '<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success">
-          <b>{{dynamic}}%</b></progressbar>'+
-        '</div>'+
-        '<div class="workItemInfo">'+
-          '<p class="workItemName">Blackmore Andersson</p>'+
-          '<p class="workItemPrio">Prio : Hight</p>'+
-        '</div>'+
-      '</accordion-heading>'+
-      '<h4>Descritpion:</h4>'+
-      '<p>This is just some content to illustrate fancy headings.</p>'+
-    '</accordion-group>'+
-  '</accordion>' -->
-
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -101,6 +66,7 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/directives/myboard.js"></script>
   <script src="scripts/controllers/workitemcontroller.js"></script>
+  <script src="scripts/directives/myworkitem.js"></script>
   <!-- endbuild -->
 </body>
 </html>
