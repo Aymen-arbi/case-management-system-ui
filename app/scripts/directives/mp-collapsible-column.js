@@ -19,6 +19,7 @@ angular.module('caseManagementSystemUiApp')
 			controller: function ($scope) {
 					$scope.classesString = $scope.styleclass;
 					$scope.title = $scope.title;
+					$scope.idTitle = $scope.title.replace(' ', '-');
 
 					$scope.toggle = false;
 
