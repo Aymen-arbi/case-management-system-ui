@@ -20,7 +20,11 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/projects/', {
+        templateUrl: 'views/board.html',
+        controller: 'BoardCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/projects/'
       });
   });
