@@ -15,11 +15,8 @@ angular.module('caseManagementSystemUiApp')
 			templateUrl: 'views/workitem.html',
 			restrict: 'E',
 			controller: function ($scope) {
-					$scope.story = {};
-					$scope.story.name = "Hejhej";
-				}
-				// link: function postLink(scope, element, attrs) {
-				//   element.text('this is the myworkItem directive');
-				// }
+				$scope.story = {};
+				$scope.story.name = "Hejhej";
+			}
 		};
 	});

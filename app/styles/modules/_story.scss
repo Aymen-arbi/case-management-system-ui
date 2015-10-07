@@ -1,22 +1,26 @@
-.workItem{
+.story{
 	margin:auto;
 	width:99%;
 }
 
-.workItemInfo{
+.story-header {
 	margin:auto;
 	margin-bottom:3px;
 	height:20px;
 	white-space: nowrap;
     overflow-y: hidden;
-	p{
+    p {
 		font-size: 13px;
 		font-weight: 300;
 		margin-bottom:0;
 	}
 }
 
-.workItemStatus{	
+.story-info{
+	white-space: normal;
+}
+
+.story-status{	
 	width :40%;
 	float:right;
 	height:14px;
@@ -27,12 +31,12 @@
 	}
 }
 
-.workItemPrio{
+.story-prio{
 	width: 40%;
 	float:right;
 }
 
-.workItemName{
+.story-name{
 	float : left;
 	width: 60%;
 	overflow:scroll;
