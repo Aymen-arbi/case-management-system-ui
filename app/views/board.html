@@ -1,15 +1,15 @@
 <mp-nav left="leftLinks" right="rightLinks"></mp-nav>
 <div class="scrollable-container">
 	<mp-collapsible-column styleclass="panel-primary" title="To Do">
-		<mp-story ng-repeat= "story in stories" story="story"></mp-story>
+		<mp-story ng-repeat= "story in stories | filter: {status: 'pending'}" story="story"></mp-story>
 	</mp-collapsible-column>
 	<mp-collapsible-column styleclass="panel-info" title="In Progress">
-		<mp-story ng-repeat= "story in stories" story="story"></mp-story>
+		<mp-story ng-repeat= "story in stories | filter: {status: 'inprogress'}" story="story"></mp-story>
 	</mp-collapsible-column>
 	<mp-collapsible-column styleclass="panel-danger" title="Test">
-		<mp-story ng-repeat= "story in stories" story="story"></mp-story>
+		<mp-story ng-repeat= "story in stories | filter: {status: 'test'}" story="story"></mp-story>
 	</mp-collapsible-column>
 	<mp-collapsible-column styleclass="panel-success" title="Done">
-		<mp-story ng-repeat= "story in stories" story="story"></mp-story>
+		<mp-story ng-repeat= "story in stories | filter: {status: 'done'}" story="story"></mp-story>
 	</mp-collapsible-column>
 </div>
