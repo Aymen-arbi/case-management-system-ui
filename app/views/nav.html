@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-brand-centered">
       <ul class="nav navbar-nav pull-left">
-        <li ng-repeat="link in leftLinks"><a href="#{{link.href}}">{{link.link}}</a></li>
+        <li ng-repeat="link in leftLinks"><a href="" ng-click="open()">{{link.link}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-repeat="link in rightLinks"><a href="#{{link.href}}">{{link.link}}</a></li>

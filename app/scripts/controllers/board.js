@@ -1,15 +1,17 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $routeParams, boardService) {
+	.controller('BoardCtrl', function ($scope, $routeParams, $modal, boardService) {
 		var projectId = $routeParams.id;
 
 		$scope.leftLinks = [{
 			link: 'Home',
-			href: ' '
+			href: ' ',
+			click: ''
 		}, {
 			link: 'Overview',
-			href: ' '
+			href: ' ',
+			click: 'open()'
 		}];
 		$scope.rightLinks = [];
 
@@ -20,4 +22,22 @@ angular.module('caseManagementSystemUiApp')
 			}, function (res) {
 				console.log(res);
 			});
+
+		$scope.open = function (size) {
+			console.log('test');
+
+			var modalInstance = $modal.open({
+				animation: true,
+				templateUrl: '/views/overview-modal.html',
+				controller: 'ModalInstanceCtrl',
+				size: size,
+				resolve: {
+					stories: function () {
+						return $scope.stories;
+					}
+				}
+			});
+		};
+
+
 	});
