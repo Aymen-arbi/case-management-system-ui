@@ -4,17 +4,17 @@
 			<accordion-heading> 
 				<div class="story-header">{{story.name}}
 					<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"> </i> 
-					<p class="story-prio">Prio : Hight</p> 
+					<p class="story-prio">Prio: {{story.priority}}</p> 
 				</div> 
 			</accordion-heading> 
 			<div class="story-info"> 
-				<p class="story-name">Aymen Arbi</p> 
-				<progressbar class="progress-striped active workItemStatus" animate="false" value="66" type="success"> 
-					<b>66%</b>
+				<p class="story-name">{{story.user.firstname}} {{story.user.lastname}}</p> 
+				<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success"> 
+					<b>{{dynamic}}%</b>
 				</progressbar> 
 			</div> 
 			<h4>Descritpion:</h4> 
-			<p>This is just some content to illustrate fancy headings.</p> 
+			<p>{{story.description}}</p> 
 		</accordion-group> 
 	</accordion> 
 </div>
