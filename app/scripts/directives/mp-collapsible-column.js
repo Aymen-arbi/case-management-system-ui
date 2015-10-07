@@ -9,7 +9,7 @@
 angular.module('caseManagementSystemUiApp')
 	.directive('mpCollapsibleColumn', function () {
 		return {
-			templateUrl: 'scripts/directives/mp-collapsible-column.html',
+			templateUrl: 'views/collapsible-column.html',
 			restrict: 'E',
 			transclude: true,
 			scope: {
