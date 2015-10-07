@@ -5,14 +5,16 @@
 
 .story-header {
 	margin:auto;
-	margin-bottom:3px;
+	vertical-align: bottom;
 	height:20px;
 	white-space: nowrap;
     overflow-y: hidden;
+
     p {
 		font-size: 13px;
 		font-weight: 300;
-		margin-bottom:0;
+		vertical-align: bottom;
+		margin-top: 1px;
 	}
 }
 
