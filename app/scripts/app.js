@@ -20,7 +20,7 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/projects/', {
+      .when('/projects/:id', {
         templateUrl: 'views/board.html',
         controller: 'BoardCtrl'
       })
