@@ -5,20 +5,19 @@
 
 .story-header {
 	margin:auto;
-	vertical-align: bottom;
+	margin-bottom:3px;
 	height:20px;
 	white-space: nowrap;
     overflow-y: hidden;
-
     p {
 		font-size: 13px;
 		font-weight: 300;
-		vertical-align: bottom;
-		margin-top: 1px;
+		margin-bottom:0;
 	}
 }
 
 .story-info{
+	margin-top: 15px;
 	white-space: normal;
 }
 
@@ -50,5 +49,19 @@
 
 .panel-body p{
 	font-size: 13px;
+}
+
+.panel-body{
+	position:relative;
+}
+.dropdown{
+	position:absolute;
+   	top:0;
+   	right:0;
+}
+
+
+.glyphicon-cog{
+	
 }
 
