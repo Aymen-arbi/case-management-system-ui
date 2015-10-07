@@ -18,9 +18,7 @@ angular.module('caseManagementSystemUiApp')
 			restrict: 'E',
 			controller: function ($scope) {
 				$scope.leftLinks = $scope.left;
-				if ($scope.right) {
-					$scope.rightLinks = $scope.right.split(' ');
-				}
+				$scope.rightLinks = $scope.right;
 			}
 		};
 	});
