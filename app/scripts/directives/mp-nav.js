@@ -9,7 +9,18 @@
 angular.module('caseManagementSystemUiApp')
 	.directive('mpNav', function () {
 		return {
+			scope: {
+				left: '=',
+				right: '='
+			},
+
 			templateUrl: 'views/nav.html',
-			restrict: 'E'
+			restrict: 'E',
+			controller: function ($scope) {
+				$scope.leftLinks = $scope.left;
+				if ($scope.right) {
+					$scope.rightLinks = $scope.right.split(' ');
+				}
+			}
 		};
 	});
