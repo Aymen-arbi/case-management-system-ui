@@ -3,21 +3,31 @@
 </div>
 <div class="modal-body">
     <div class="row">
-        <div class="col-md-3">
-            <mp-story ng-repeat= "story in stories" story="story"></mp-story>
+        <div class="col-md-3" as-sortable ng-model="stories">
+            <div ng-repeat= "story in stories" story="story" as-sortable-item>
+                <div as-sortable-item-handle style="border: 1px solid black;">
+                    <mp-story story="story"></mp-story>
+                </div>
+            </div>
         </div>
         <div class="col-md-8">
             <mp-collapsible-column styleclass="panel-primary" title="Marcus">
-                
+                <div as-sortable ng-model="marcusItems">
+                    <div ng-repeat="story in marcusItems" as-sortable-item>
+                        <div as-sortable-item-handle>
+                            <mp-story story="story"></mp-story>
+                        </div>
+                    </div>
+                </div>
             </mp-collapsible-column>
+
             <mp-collapsible-column styleclass="panel-primary" title="Patrik">
-                
             </mp-collapsible-column>
+
             <mp-collapsible-column styleclass="panel-primary" title="Jimmy">
-                
             </mp-collapsible-column>
-            <mp-collapsible-column styleclass="panel-primary" title="Aymen">
-                
+
+            <mp-collapsible-column styleclass="panel-primary" title="Aymen">    
             </mp-collapsible-column>
         </div>
     </div>

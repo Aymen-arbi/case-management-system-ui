@@ -4,6 +4,7 @@ angular.module('caseManagementSystemUiApp')
 	.controller('ModalInstanceCtrl', function ($scope, $modalInstance, stories) {
 
 		$scope.stories = stories;
+		$scope.marcusItems = [];
 
 		$scope.ok = function () {
 			$modalInstance.close('ok');
