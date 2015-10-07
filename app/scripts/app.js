@@ -25,10 +25,9 @@ angular
         templateUrl: 'views/board.html',
         controller: 'BoardCtrl'
       })
-      .when('/overview', {
+      .when('/projects/:id/overview', {
         templateUrl: 'views/overview.html',
-        controller: 'OverviewCtrl',
-        controllerAs: 'overview'
+        controller: 'OverviewCtrl'
       })
       .otherwise({
         redirectTo: '/projects/'

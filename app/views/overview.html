@@ -1,1 +1,34 @@
-<p>This is the overview view.</p>
+<mp-nav left="leftLinks" right="rightLinks" stories="stories"></mp-nav>
+
+<div class="row">
+	<div class="col-md-3" as-sortable ng-model="stories">
+		<div ng-repeat= "story in stories" as-sortable-item>
+			<div as-sortable-item-handle>
+				<div style="background-color: pink;">
+					<h4>{{story.name}}</h4>
+					<p>{{story.description}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<mp-collapsible-column styleclass="panel-primary" title="Marcus">
+			<div as-sortable ng-model="marcusItems">
+				<div ng-repeat="story in marcusItems" as-sortable-item>
+					<div as-sortable-item-handle>
+						<mp-story story="story"></mp-story>
+					</div>
+				</div>
+			</div>
+		</mp-collapsible-column>
+
+		<mp-collapsible-column styleclass="panel-primary" title="Patrik">
+		</mp-collapsible-column>
+
+		<mp-collapsible-column styleclass="panel-primary" title="Jimmy">
+		</mp-collapsible-column>
+
+		<mp-collapsible-column styleclass="panel-primary" title="Aymen">    
+		</mp-collapsible-column>
+	</div>
+</div>

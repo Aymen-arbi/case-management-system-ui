@@ -5,8 +5,11 @@
     <div class="row">
         <div class="col-md-3" as-sortable ng-model="stories">
             <div ng-repeat= "story in stories" story="story" as-sortable-item>
-                <div as-sortable-item-handle style="border: 1px solid black;">
-                    <mp-story story="story"></mp-story>
+                <div as-sortable-item-handle>
+                    <div style="background-color: pink;">
+                        <h4>{{story.name}}</h4>
+                        <p>{{story.description}}</p>
+                    </div>
                 </div>
             </div>
         </div>

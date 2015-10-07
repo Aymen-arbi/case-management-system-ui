@@ -10,7 +10,7 @@ angular.module('caseManagementSystemUiApp')
 			click: ''
 		}, {
 			link: 'Overview',
-			href: ' ',
+			href: '/projects/' + projectId + '/overview',
 			click: 'open()'
 		}];
 		$scope.rightLinks = [];

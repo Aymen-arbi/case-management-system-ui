@@ -8,10 +8,13 @@
  * Controller of the caseManagementSystemUiApp
  */
 angular.module('caseManagementSystemUiApp')
-  .controller('OverviewCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('OverviewCtrl', function ($scope, $routeParams, boardService) {
+		var projectId = $routeParams.id;
+
+		boardService.getStories(projectId)
+			.then(function (res) {
+				$scope.stories = res.data;
+			}, function (res) {
+				console.log(res);
+			});
+	});
