@@ -4,10 +4,10 @@ angular.module('caseManagementSystemUiApp')
 		$scope.story = story;
 
 		$scope.issueDone = function (index) {
+			story.issues.splice(index, 1);
 			boardService.removeIssue(story.storyId, story.issues[index].issueId)
 				.then(function () {
 					socket.emit('update stories');
-					story.issues.splice(index, 1);
 				});
 		};
 	});
