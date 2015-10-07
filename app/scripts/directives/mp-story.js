@@ -7,12 +7,12 @@
  * # myworkItem
  */
 angular.module('caseManagementSystemUiApp')
-	.directive('mpWorkItem', function () {
+	.directive('mpStory', function () {
 		return {
 			scope: {
 				//Todo story: '='
 			},
-			templateUrl: 'views/workitem.html',
+			templateUrl: 'views/story.html',
 			restrict: 'E',
 			controller: function ($scope) {
 				$scope.story = {};
