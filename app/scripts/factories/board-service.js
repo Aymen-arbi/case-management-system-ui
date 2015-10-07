@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.factory('boardService', ['', function ($http) {
+	.factory('boardService', function ($http) {
 		var projectUrl = "http://127.0.0.1:8080/case-management-webservice/projects/";
 		var storyUrl = "http://127.0.0.1:8080/case-management-webservice/stories/";
 		return {
@@ -35,4 +35,4 @@ angular.module('caseManagementSystemUiApp')
 				return $http.delete(storyUrl + storyId);
 			}
 		};
-	}]);
+	});

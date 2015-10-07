@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', ['boardService', function ($scope, $routeParams, boardService) {
+	.controller('BoardCtrl', function ($scope, $routeParams, boardService) {
 		var projectId = $routeParams.id;
 
 		boardService.getStories(projectId)
@@ -10,4 +10,4 @@ angular.module('caseManagementSystemUiApp')
 			}, function (res) {
 				console.log(res);
 			});
-	}]);
+	});
