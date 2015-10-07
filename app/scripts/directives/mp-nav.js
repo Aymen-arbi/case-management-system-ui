@@ -15,10 +15,6 @@ angular.module('caseManagementSystemUiApp')
 			},
 
 			templateUrl: 'views/nav.html',
-			restrict: 'E',
-			controller: function ($scope) {
-				$scope.leftLinks = $scope.left;
-				$scope.rightLinks = $scope.right;
-			}
+			restrict: 'E'
 		};
 	});

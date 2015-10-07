@@ -12,9 +12,12 @@
 				<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success"> 
 					<b>{{dynamic}}%</b>
 				</progressbar> 
-			</div> 
+			</div>
 			<h4>Descritpion:</h4> 
 			<p>{{story.description}}</p>
+			<div class="issues">
+				<i class="pull-right glyphicon glyphicon-warning-sign" ng-click="openIssuesModal()" ng-class="{'has-issues': hasIssues()}"></i>
+			</div>
 		</accordion-group> 
 	</accordion> 
 </div>

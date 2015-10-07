@@ -1,4 +1,4 @@
-.story{
+.story {
 	margin:auto;
 	width:99%;
 }
@@ -18,37 +18,48 @@
 	}
 }
 
-.story-info{
+.story-info {
 	white-space: normal;
 }
 
-.story-status{	
+.story-status {	
 	width :40%;
 	float:right;
 	height:14px;
 	margin-top: 2px;
+
 	.progress-bar{
 		line-height: 13px;
 		font-size:11px;
 	}
 }
 
-.story-prio{
+.story-prio {
 	width: 40%;
 	float:right;
 }
 
-.story-name{
+.story-name {
 	float : left;
 	width: 60%;
 	overflow:scroll;
 }
 
-.panel-body h4{
+.panel-body h4 {
 	font-size: 14px;
 }
 
-.panel-body p{
+.panel-body p {
 	font-size: 13px;
 }
 
+.issues {
+	i {
+		color: #eee;
+	}
+
+	.has-issues {
+		color: $accent-color;
+		cursor: pointer;
+	}
+}
