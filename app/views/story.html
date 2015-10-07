@@ -9,11 +9,8 @@
 			</accordion-heading> 
 			<div class="story-info"> 
 				<p class="story-name">{{story.user.firstname}} {{story.user.lastname}}</p> 
-				<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success"> 
-					<b>{{dynamic}}%</b>
-				</progressbar> 
-			</div>
-			<h4>Descritpion:</h4> 
+				<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success"></progressbar> 
+			</div> 
 			<p>{{story.description}}</p>
 			<div class="issues">
 				<i class="pull-right glyphicon glyphicon-warning-sign" ng-click="openIssuesModal()" ng-class="{'has-issues': hasIssues()}"></i>

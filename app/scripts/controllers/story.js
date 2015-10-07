@@ -21,6 +21,12 @@ angular.module('caseManagementSystemUiApp')
 			$scope.dynamic = 0;
 		}
 
+		if (!$scope.story.user) {
+			$scope.story.user = {};
+			$scope.story.user.firstname = "Not";
+			$scope.story.user.lastname = "assigned";
+		}
+
 		$scope.hasIssues = function () {
 			return $scope.story.issues.length > 0;
 		};
