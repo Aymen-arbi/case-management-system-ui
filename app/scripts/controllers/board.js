@@ -1,8 +1,19 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $routeParams, boardService) {
+	.controller('BoardCtrl', function ($scope, $routeParams, boardService, socket) {
+		function getAll() {
+			boardService.getStories(projectId)
+				.then(function (res) {
+					$scope.stories = res.data;
+				}, function (res) {
+					console.log(res);
+				});
+		}
+
 		var projectId = $routeParams.id;
+
+		getAll();
 
 		$scope.leftLinks = [{
 			link: 'Home',
@@ -11,12 +22,10 @@ angular.module('caseManagementSystemUiApp')
 			link: 'Overview',
 			href: ' '
 		}];
+
 		$scope.rightLinks = [];
 
-		boardService.getStories(projectId)
-			.then(function (res) {
-				$scope.stories = res.data;
-			}, function (res) {
-				console.log(res);
-			});
+		socket.on('update stories', function () {
+			getAll();
+		});
 	});
