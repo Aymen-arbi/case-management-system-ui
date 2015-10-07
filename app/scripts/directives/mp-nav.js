@@ -11,14 +11,30 @@ angular.module('caseManagementSystemUiApp')
 		return {
 			scope: {
 				left: '=',
-				right: '='
+				right: '=',
+				stories: '='
 			},
 
 			templateUrl: 'views/nav.html',
 			restrict: 'E',
-			controller: function ($scope) {
+			controller: function ($scope, $modal) {
 				$scope.leftLinks = $scope.left;
 				$scope.rightLinks = $scope.right;
+				$scope.stories = $scope.stories;
+
+				$scope.open = function () {
+					$modal.open({
+						animation: true,
+						templateUrl: 'views/overview-modal.html',
+						controller: 'ModalInstanceCtrl',
+						size: 'lg',
+						resolve: {
+							stories: function () {
+								return $scope.stories;
+							}
+						}
+					});
+				};
 			}
 		};
 	});

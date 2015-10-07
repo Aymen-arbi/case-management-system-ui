@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $routeParams, $modal, boardService) {
+	.controller('BoardCtrl', function ($scope, $routeParams, boardService) {
 		var projectId = $routeParams.id;
 
 		$scope.leftLinks = [{
@@ -22,10 +22,4 @@ angular.module('caseManagementSystemUiApp')
 			}, function (res) {
 				console.log(res);
 			});
-
-		$scope.open = function () {
-			console.log('test');
-		};
-
-
 	});
