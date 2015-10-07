@@ -7,6 +7,7 @@
   margin: 15px 15px;
   width: 20%;
   min-width: 270px;
+  max-width: 270px;
   float: left;
   margin-top:60px;
 }
@@ -22,16 +23,16 @@
 }
 
 .panel-heading-board a.collapsed:after {
-    content:"\e080";
-    cursor:pointer;
+  content:"\e080";
+  cursor:pointer;
 }
 
 .collapse-width {
-    height: auto;
-    transition-delay: 0.3s;
+  height: auto;
+  transition-delay: 0.3s;
 
   min-width: 135px;
-    width: 8%;
+  width: 8%;
 }
 
 .panel {
