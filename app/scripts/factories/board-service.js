@@ -28,8 +28,8 @@ angular.module('caseManagementSystemUiApp')
 			addStory: function (id, story) {
 				return $http.post(projectUrl + id + '/stories', story);
 			},
-			updateStoryStatus: function (storyId, status) {
-				return $http.put(storyUrl + storyId, status);
+			updateStory: function (storyId, story) {
+				return $http.put(storyUrl + storyId, story);
 			},
 			removeStory: function (storyId) {
 				return $http.delete(storyUrl + storyId);

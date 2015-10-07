@@ -17,7 +17,6 @@ angular.module('caseManagementSystemUiApp')
 
 		boardService.getStories(projectId)
 			.then(function (res) {
-				console.log(res);
 				$scope.stories = res.data;
 			}, function (res) {
 				console.log(res);
