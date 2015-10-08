@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.controller('IssuesModalCtrl', function ($scope, $modalInstance, story, boardService, socket) {
+	.controller('IssuesModalCtrl', function ($scope, story, boardService, socket) {
 		$scope.story = story;
 
 		$scope.issueDone = function (index) {

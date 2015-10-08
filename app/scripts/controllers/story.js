@@ -42,7 +42,7 @@ angular.module('caseManagementSystemUiApp')
 							return $scope.story;
 						}
 					},
-					size: 'md'
+					size: 'sm'
 				});
 			}
 		};
