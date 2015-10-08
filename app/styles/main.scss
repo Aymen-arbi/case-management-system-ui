@@ -2,10 +2,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @import "utils/_variables.sass";
 @import "modules/_board.scss";
+@import "modules/_story.scss";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "modules/_nav.sass";
 @import "layout/_main-app.scss";
-@import "modules/_story.scss";
 
 body {
     background: $bg-color;
