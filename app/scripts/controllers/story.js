@@ -53,4 +53,18 @@ angular.module('caseManagementSystemUiApp')
 					socket.emit('update stories');
 				});
 		};
+
+		$scope.addIssue = function () {
+			$modal.open({
+				animation: true,
+				templateUrl: '../views/add-issue-modal.html',
+				controller: 'AddIssueCtrl',
+				resolve: {
+					story: function () {
+						return $scope.story;
+					}
+				},
+				size: 'sm'
+			});
+		};
 	});

@@ -1,0 +1,11 @@
+<div class="add-issue">
+	<h4 class="page-header">Add issue</h4>
+	<form class="form-group">
+		<input type="text" class="form-control title" placeholder="Title" required ng-model="issue.title">
+		<textarea rows="3" placeholder="Description" class="form-control description" ng-model="issue.description"></textarea>
+	</form>
+	<div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    </div>
+</div>
