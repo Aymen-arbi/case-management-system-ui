@@ -1,6 +1,12 @@
 .story {
 	margin:auto;
 	width:99%;
+	
+	.dropdown {
+		position:absolute;
+		top:0;
+		right:0;
+	}
 }
 
 .story-header {
@@ -53,7 +59,7 @@
 }
 
 .issues {
-	
+
 	i {
 		color: #eee;
 	}
@@ -66,11 +72,4 @@
 
 .panel-body {
 	position:relative;
-}
-
-.dropdown {
-	position:absolute;
-	top:0;
-	right:0;
-
 }
