@@ -2,16 +2,45 @@
 
 angular.module('caseManagementSystemUiApp')
 	.controller('BoardCtrl', function ($scope, $routeParams, boardService, socket) {
+		var projectId = $routeParams.id;
+
+		function populateArrayStatus(array) {
+			$scope.backlog = [];
+			$scope.inProgress = [];
+			$scope.test = [];
+			$scope.done = [];
+
+			for (var i = 0; i < array.length; i++) {
+				var status = array[i].status;
+
+				switch (status) {
+				case 'PENDING':
+					$scope.backlog.push(array[i]);
+					break;
+				case 'INPROGRESS':
+					$scope.inProgress.push(array[i]);
+					break;
+				case 'TEST':
+					$scope.test.push(array[i]);
+					break;
+				case 'DONE':
+					$scope.done.push(array[i]);
+					break;
+				default:
+					$scope.backlog.push(array[i]);
+				}
+			}
+		}
+
 		function getAll() {
 			boardService.getStories(projectId)
 				.then(function (res) {
 					$scope.stories = res.data;
+					populateArrayStatus($scope.stories);
 				}, function (res) {
 					console.log(res);
 				});
 		}
-
-		var projectId = $routeParams.id;
 
 		getAll();
 
@@ -28,4 +57,20 @@ angular.module('caseManagementSystemUiApp')
 		socket.on('update stories', function () {
 			getAll();
 		});
+
+		$scope.dragControlListeners = {
+			itemMoved: function (event) {
+				var story = event.source.itemScope.story;
+				var status = event.dest.sortableScope.$parent.$parent.title.replace(' ', '').toUpperCase();
+
+				if (status === 'BACKLOG') {
+					status = 'PENDING';
+				}
+
+				story.status = status;
+
+				boardService.updateStory(story.storyId, story);
+				socket.emit('update stories');
+			}
+		};
 	});

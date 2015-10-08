@@ -1,15 +1,68 @@
 <mp-nav left="leftLinks" right="rightLinks" stories="stories"></mp-nav>
 <div class="scrollable-container">
+
 	<mp-collapsible-column styleclass="panel-primary" title="Backlog">
-		<mp-story ng-repeat= "story in stories | filter: {status: 'pending'}" story="story"></mp-story>
+		<div as-sortable="dragControlListeners" ng-model="backlog" style="min-height: 20px;">
+			<div ng-repeat="story in backlog" as-sortable-item>
+				 <div as-sortable-item-handle>
+					<mp-story story="story"></mp-story>
+				</div>
+			</div>
+		</div>
 	</mp-collapsible-column>
+
 	<mp-collapsible-column styleclass="panel-info" title="In Progress">
-		<mp-story ng-repeat= "story in stories | filter: {status: 'inprogress'}" story="story"></mp-story>
+		<div as-sortable="dragControlListeners" ng-model="inProgress" style="min-height: 20px;">
+			<div ng-repeat="story in inProgress" as-sortable-item>
+				 <div as-sortable-item-handle>
+					<mp-story story="story"></mp-story>
+				</div>
+			</div>
+		</div>
 	</mp-collapsible-column>
+
 	<mp-collapsible-column styleclass="panel-danger" title="Test">
-		<mp-story ng-repeat= "story in stories | filter: {status: 'test'}" story="story"></mp-story>
+		<div as-sortable="dragControlListeners" ng-model="test" style="min-height: 20px;">
+			<div ng-repeat="story in test" as-sortable-item>
+				 <div as-sortable-item-handle>
+					<mp-story story="story"></mp-story>
+				</div>
+			</div>
+		</div>
 	</mp-collapsible-column>
+
 	<mp-collapsible-column styleclass="panel-success" title="Done">
-		<mp-story ng-repeat= "story in stories | filter: {status: 'done'}" story="story"></mp-story>
+		<div as-sortable="dragControlListeners" ng-model="done" style="min-height: 20px;">
+			<div ng-repeat="story in done" as-sortable-item>
+				 <div as-sortable-item-handle>
+					<mp-story story="story"></mp-story>
+				</div>
+			</div>
+		</div>
 	</mp-collapsible-column>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mp-collapsible-column styleclass="panel-primary" title="Backlog">
+        <div as-sortable="dragControlListeners" ng-model="backlog" style="min-height: 20px;">
+            <div ng-repeat="story in backlog" as-sortable-item>
+                <div as-sortable-item-handle>
+                    <mp-story story="story"></mp-story>
+                </div>
+            </div>
+        </div>
+    </mp-collapsible-column> -->

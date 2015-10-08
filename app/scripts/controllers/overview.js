@@ -62,11 +62,9 @@ angular.module('caseManagementSystemUiApp')
 				for (var i = 0; i < $scope.userlist.length; i++) {
 					var list = $scope.userlist[i];
 					var user = list.user;
-					console.log(user);
-					console.log(list.list);
+
 					for (var n = 0; n < list.list.length; n++) {
 						var story = list.list[n];
-						console.log(story);
 						boardService.assignStoryToUser(projectId, user.userId, story.storyId);
 					}
 
@@ -74,6 +72,15 @@ angular.module('caseManagementSystemUiApp')
 				}
 
 				socket.emit('update stories');
+			},
+			accept: function (sourceItemHandleScope) {
+				var user = sourceItemHandleScope.$parent.story.user;
+
+				if (user.firstname === 'Not') {
+					return true;
+				}
+
+				return false;
 			}
 		};
 	});
