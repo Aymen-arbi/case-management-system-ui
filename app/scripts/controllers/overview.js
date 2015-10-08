@@ -13,6 +13,22 @@ angular.module('caseManagementSystemUiApp')
 		$scope.userlist = [];
 		$scope.teamMembers = {};
 
+		$scope.filterBacklog = function (story) {
+			console.log(story);
+			return story.hasOwnProperty('user');
+		};
+
+		$scope.filterUser = function (story, user) {
+			if (story.hasOwnProperty('user')) {
+				var userFromStory = story.user;
+				if (user) {
+					return userFromStory === user;
+				}
+
+				return false;
+			}
+		};
+
 		boardService.getStories(projectId)
 			.then(function (res) {
 				$scope.stories = res.data;

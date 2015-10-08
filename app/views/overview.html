@@ -4,7 +4,7 @@
         <div class="col-md-3">
              <mp-collapsible-column styleclass="panel-primary" title="Backlog">
                 <div as-sortable="dragControlListeners" ng-model="stories" style="min-height: 20px;">
-                    <div ng-repeat="story in stories | filter: {story.user: undefined}" as-sortable-item>
+                    <div ng-repeat="story in stories | filter: !filterBacklog" as-sortable-item>
                         <div as-sortable-item-handle>
                             <mp-story story="story"></mp-story>
                         </div>
@@ -13,9 +13,9 @@
             </mp-collapsible-column>
         </div>
         <div class="col-md-8">
-            <mp-collapsible-column styleclass="panel-primary" ng-repeat="list in userlist track by $index" title="{{userlist[$index].user.firstName}}">
+            <mp-collapsible-column styleclass="panel-primary" ng-repeat="list in userlist track by $index" title="{{list.user.firstName}}">
                 <div style="min-height: 20px;" as-sortable="dragControlListeners" ng-model="list.list">
-                    <div ng-repeat="story in list.list" as-sortable-item>
+                    <div ng-repeat="story in stories | filter: {story.user === list.user}" as-sortable-item>
                         <div as-sortable-item-handle>
                             <mp-story story="story"></mp-story>
                         </div>
