@@ -8,9 +8,10 @@
  * Controller of the caseManagementSystemUiApp
  */
 angular.module('caseManagementSystemUiApp')
-	.controller('OverviewCtrl', function ($scope, $routeParams, boardService) {
+	.controller('OverviewCtrl', function ($scope, $routeParams, boardService, socket) {
 		var projectId = $routeParams.id;
 		$scope.userlist = [];
+		$scope.stories = {};
 		$scope.teamMembers = {};
 
 		$scope.filterBacklog = function (story) {
@@ -57,6 +58,8 @@ angular.module('caseManagementSystemUiApp')
 					}
 				}
 				stories.splice(0, stories.length);
+
+				socket.emit('update stories');
 			}
 		};
 	});
