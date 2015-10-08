@@ -73,10 +73,14 @@ angular.module('caseManagementSystemUiApp')
 
 				socket.emit('update stories');
 			},
-			accept: function (sourceItemHandleScope, destSortableScope) {
-				console.log('Source: ', sourceItemHandleScope);
-				console.log('Dest: ', destSortableScope);
-				return true;
+			accept: function (sourceItemHandleScope) {
+				var user = sourceItemHandleScope.$parent.story.user;
+
+				if (user.firstname === 'Not') {
+					return true;
+				}
+
+				return false;
 			}
 		};
 	});
