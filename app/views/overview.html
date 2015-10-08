@@ -3,7 +3,7 @@
 <div class="row">
         <div class="col-md-3">
              <mp-collapsible-column styleclass="panel-primary" title="Backlog">
-                <div as-sortable ng-model="stories" style="min-height: 20px;">
+                <div as-sortable="dragControlListeners" ng-model="stories" style="min-height: 20px;">
                     <div ng-repeat="story in stories" as-sortable-item>
                         <div as-sortable-item-handle>
                             <mp-story story="story"></mp-story>
@@ -13,39 +13,9 @@
             </mp-collapsible-column>
         </div>
         <div class="col-md-8">
-            <mp-collapsible-column styleclass="panel-primary" title="Marcus">
-                <div style="min-height: 20px;" as-sortable ng-model="marcusItems">
-                    <div ng-repeat="story in marcusItems" as-sortable-item>
-                        <div as-sortable-item-handle>
-                            <mp-story story="story"></mp-story>
-                        </div>
-                    </div>
-                </div>
-            </mp-collapsible-column>
-
-            <mp-collapsible-column styleclass="panel-primary" title="Patrik">
-                <div as-sortable ng-model="patrikItems" style="min-height: 20px;">
-                    <div ng-repeat="story in patrikItems" as-sortable-item>
-                        <div as-sortable-item-handle>
-                            <mp-story story="story"></mp-story>
-                        </div>
-                    </div>
-                </div>
-            </mp-collapsible-column>
-
-            <mp-collapsible-column styleclass="panel-primary" title="Jimmy">
-                <div as-sortable ng-model="jimmyItems" style="min-height: 20px;">
-                    <div ng-repeat="story in jimmyItems" as-sortable-item>
-                        <div as-sortable-item-handle>
-                            <mp-story story="story"></mp-story>
-                        </div>
-                    </div>
-                </div>
-            </mp-collapsible-column>
-
-            <mp-collapsible-column styleclass="panel-primary" title="Aymen">
-                <div as-sortable ng-model="aymenItems" style="min-height: 20px;">
-                    <div ng-repeat="story in aymenItems" as-sortable-item>
+            <mp-collapsible-column styleclass="panel-primary" ng-repeat="list in userlist track by $index" title="{{userlist[$index].user.firstName}}">
+                <div style="min-height: 20px;" as-sortable="dragControlListeners" ng-model="list.list">
+                    <div ng-repeat="story in list.list" as-sortable-item>
                         <div as-sortable-item-handle>
                             <mp-story story="story"></mp-story>
                         </div>

@@ -22,8 +22,8 @@ angular.module('caseManagementSystemUiApp')
 			removeTeamMember: function (projectId, userId) {
 				return $http.put(projectUrl + projectId + '/users/' + userId);
 			},
-			assignStoryToUser: function (projectId, userId) {
-				return $http.put(projectUrl + projectId + '/users/' + userId + '/stories');
+			assignStoryToUser: function (projectId, userId, storyId) {
+				return $http.put(projectUrl + projectId + '/users/' + userId + '/stories', storyId);
 			},
 			addStory: function (id, story) {
 				return $http.post(projectUrl + id + '/stories', story);
