@@ -6,12 +6,10 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.leftLinks = [{
 			link: 'Home',
-			href: ' ',
-			click: ''
+			href: ' '
 		}, {
 			link: 'Overview',
-			href: '/projects/' + projectId + '/overview',
-			click: 'open()'
+			href: '/projects/' + projectId + '/overview'
 		}];
 		$scope.rightLinks = [];
 
