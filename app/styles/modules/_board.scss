@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: row;
 
+  .drag-control {
+    min-height: 20px;
+  }
+
   .panel-primary{
     border-color: #7986CB;
     >.panel-heading{

@@ -2,7 +2,7 @@
 <div class="scrollable-container">
 
 	<mp-collapsible-column styleclass="panel-primary" title="Backlog">
-		<div as-sortable="dragControlListeners" ng-model="backlog" style="min-height: 20px;">
+		<div class="drag-control" as-sortable="dragControlListeners" ng-model="backlog">
 			<div ng-repeat="story in backlog" as-sortable-item>
 				 <div as-sortable-item-handle>
 					<mp-story story="story"></mp-story>
@@ -12,7 +12,7 @@
 	</mp-collapsible-column>
 
 	<mp-collapsible-column styleclass="panel-info" title="In Progress">
-		<div as-sortable="dragControlListeners" ng-model="inProgress" style="min-height: 20px;">
+		<div class="drag-control" as-sortable="dragControlListeners" ng-model="inProgress">
 			<div ng-repeat="story in inProgress" as-sortable-item>
 				 <div as-sortable-item-handle>
 					<mp-story story="story"></mp-story>
@@ -22,7 +22,7 @@
 	</mp-collapsible-column>
 
 	<mp-collapsible-column styleclass="panel-danger" title="Test">
-		<div as-sortable="dragControlListeners" ng-model="test" style="min-height: 20px;">
+		<div class="drag-control" as-sortable="dragControlListeners" ng-model="test">
 			<div ng-repeat="story in test" as-sortable-item>
 				 <div as-sortable-item-handle>
 					<mp-story story="story"></mp-story>
@@ -32,7 +32,7 @@
 	</mp-collapsible-column>
 
 	<mp-collapsible-column styleclass="panel-success" title="Done">
-		<div as-sortable="dragControlListeners" ng-model="done" style="min-height: 20px;">
+		<div class="drag-control" as-sortable="dragControlListeners" ng-model="done">
 			<div ng-repeat="story in done" as-sortable-item>
 				 <div as-sortable-item-handle>
 					<mp-story story="story"></mp-story>
