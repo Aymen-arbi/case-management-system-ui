@@ -7,6 +7,15 @@
 					<p class="story-prio">{{story.priority}}</p> 
 				</div> 
 			</accordion-heading> 
+			<div class="dropdown">
+				<button class="glyphicon glyphicon-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#">Add</a></li>
+					    <li><a href="#">Update</a></li>
+					    <li><a href="#">Remove</a></li>
+					    <li><a href="#">Change status</a></li>
+		  			</ul>
+  			</div>
 			<div class="story-info"> 
 				<p class="story-name">{{story.user.firstname}} {{story.user.lastname}}</p> 
 				<progressbar class="progress-striped active workItemStatus" animate="false" value="dynamic" type="success"></progressbar> 

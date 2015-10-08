@@ -5,20 +5,18 @@
 
 .story-header {
 	margin:auto;
-	vertical-align: bottom;
 	height:20px;
 	white-space: nowrap;
-    overflow-y: hidden;
-
-    p {
+	overflow-y: hidden;
+	p {
 		font-size: 13px;
 		font-weight: 300;
-		vertical-align: bottom;
-		margin-top: 1px;
+		margin-bottom:0;
 	}
 }
 
-.story-info {
+.story-info{
+	margin-top: 15px;
 	white-space: normal;
 }
 
@@ -35,8 +33,9 @@
 }
 
 .story-prio {
-	width: 40%;
+	width: 30%;
 	float:right;
+	margin-top: 2px;
 }
 
 .story-name {
@@ -62,4 +61,15 @@
 		color: $accent-color;
 		cursor: pointer;
 	}
+}
+
+.panel-body {
+	position:relative;
+}
+
+.dropdown {
+	position:absolute;
+	top:0;
+	right:0;
+
 }
