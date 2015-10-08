@@ -72,11 +72,6 @@ angular.module('caseManagementSystemUiApp')
 				}
 
 				socket.emit('update stories');
-			},
-			accept: function (sourceItemHandleScope, destSortableScope) {
-				console.log('Source: ', sourceItemHandleScope);
-				console.log('Dest: ', destSortableScope);
-				return true;
 			}
 		};
 	});
