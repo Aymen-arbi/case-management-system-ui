@@ -3,12 +3,13 @@
 angular.module('caseManagementSystemUiApp')
 	.controller('BoardCtrl', function ($scope, $routeParams, boardService, socket) {
 		var projectId = $routeParams.id;
-		$scope.backlog = [];
-		$scope.inProgress = [];
-		$scope.test = [];
-		$scope.done = [];
 
 		function populateArrayStatus(array) {
+			$scope.backlog = [];
+			$scope.inProgress = [];
+			$scope.test = [];
+			$scope.done = [];
+
 			for (var i = 0; i < array.length; i++) {
 				var status = array[i].status;
 
@@ -59,13 +60,17 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.dragControlListeners = {
 			itemMoved: function (event) {
-				var moveSuccess;
-				console.log(event);
+				var story = event.source.itemScope.story;
+				var status = event.dest.sortableScope.$parent.$parent.title.replace(' ', '').toUpperCase();
 
-				moveSuccess = function () {
-					console.log(event);
-				};
-				// socket.emit('update stories');
+				if (status === 'BACKLOG') {
+					status = 'PENDING';
+				}
+
+				story.status = status;
+
+				boardService.updateStory(story.storyId, story);
+				socket.emit('update stories');
 			}
 		};
 	});
