@@ -24,6 +24,11 @@ angular.module('caseManagementSystemUiApp')
 		$scope.teamMembers = {};
 		$scope.backlog = {};
 
+		$scope.left = [{
+			link: 'Back to project',
+			href: '/projects/' + projectId
+		}];
+
 		getAll();
 
 		socket.on('update stories', function () {

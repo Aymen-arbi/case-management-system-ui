@@ -1,16 +1,19 @@
-<mp-nav left="leftLinks" right="rightLinks" stories="stories"></mp-nav>
-<div class="scrollable-container">
-     <mp-collapsible-column styleclass="panel-primary" title="Backlog">
-         <div as-sortable="dragControlListeners" ng-model="backlog" style="min-height: 20px;">
-            <div ng-repeat="story in backlog" as-sortable-item>
-                <div as-sortable-item-handle>
-                    <mp-story story="story"></mp-story>
-                </div>
+<mp-nav left="left" right="" stories="stories"></mp-nav>
+<div class="backlog">
+    <mp-collapsible-column styleclass="panel-primary" title="Backlog">
+    <div as-sortable="dragControlListeners" ng-model="backlog" style="min-height: 20px;">
+        <div ng-repeat="story in backlog" as-sortable-item>
+            <div as-sortable-item-handle>
+                <mp-story story="story"></mp-story>
             </div>
         </div>
-    </mp-collapsible-column>
+    </div>
+</mp-collapsible-column>
+</div>
 
-    <mp-collapsible-column styleclass="panel-primary" ng-repeat="list in userlist track by $index" title="{{userlist[$index].user.firstName}}">
+<div class="overview">
+    <div class="scrollable-container">
+        <mp-collapsible-column styleclass="panel-primary" ng-repeat="list in userlist track by $index" title="{{userlist[$index].user.firstName}}">
         <div style="min-height: 20px;" as-sortable="dragControlListeners" ng-model="list.list">
             <div ng-repeat="story in stories | userFilter:list.user" as-sortable-item>
                 <div as-sortable-item-handle>
@@ -19,4 +22,5 @@
             </div>
         </div>
     </mp-collapsible-column>
+</div>
 </div>
