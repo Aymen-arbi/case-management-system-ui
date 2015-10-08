@@ -9,21 +9,30 @@
  */
 angular.module('caseManagementSystemUiApp')
 	.controller('OverviewCtrl', function ($scope, $routeParams, boardService, socket) {
+		function getAll() {
+			boardService.getStories(projectId)
+				.then(function (res) {
+					$scope.stories = res.data;
+				}, function (res) {
+					console.log(res);
+				});
+		}
+
 		var projectId = $routeParams.id;
 		$scope.userlist = [];
 		$scope.stories = {};
 		$scope.teamMembers = {};
+		$scope.backlog = {};
 
-		$scope.filterBacklog = function (story) {
-			console.log(story);
-			return story.hasOwnProperty('user');
-		};
+		getAll();
 
-		boardService.getStories(projectId)
+		socket.on('update stories', function () {
+			$scope.stories = getAll();
+		});
+
+		boardService.getBacklog(projectId)
 			.then(function (res) {
-				$scope.stories = res.data;
-			}, function (res) {
-				console.log(res);
+				$scope.backlog = res.data;
 			});
 
 		boardService.getTeamMembers(projectId)
@@ -44,20 +53,20 @@ angular.module('caseManagementSystemUiApp')
 		}
 
 		$scope.dragControlListeners = {
-			itemMoved: function (event) {
-				var stories = event.dest.sortableScope.modelValue;
-				console.log($scope.userlist.length);
+			itemMoved: function () {
 				for (var i = 0; i < $scope.userlist.length; i++) {
 					var list = $scope.userlist[i];
 					var user = list.user;
 					console.log(user);
+					console.log(list.list);
 					for (var n = 0; n < list.list.length; n++) {
 						var story = list.list[n];
-						console.log(story.storyId);
+						console.log(story);
 						boardService.assignStoryToUser(projectId, user.userId, story.storyId);
 					}
+
+					list.list.splice(0, 1);
 				}
-				stories.splice(0, stories.length);
 
 				socket.emit('update stories');
 			}

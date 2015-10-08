@@ -13,6 +13,9 @@ angular.module('caseManagementSystemUiApp')
 			getTeamMembers: function (id) {
 				return $http.get(projectUrl + id + '/users');
 			},
+			getBacklog: function (projectId) {
+				return $http.get(projectUrl + projectId + '/backlog');
+			},
 			getTeamMembersStories: function (projectId, userId) {
 				return $http.get(projectUrl + projectId + '/users/' + userId + '/stories');
 			},
