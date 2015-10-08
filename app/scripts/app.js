@@ -29,6 +29,10 @@ angular
         templateUrl: 'views/overview.html',
         controller: 'OverviewCtrl'
       })
+      .when('projects/:id/story', {
+        templateUrl: 'views/add-modal.html',
+        controller: 'OverviewCtrl'
+      })
       .otherwise({
         redirectTo: '/projects/'
       });

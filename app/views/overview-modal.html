@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" ng-model="users">
             <mp-collapsible-column styleclass="panel-primary" title="Marcus">
                 <div as-sortable ng-model="marcusItems">
                     <div ng-repeat="story in marcusItems" as-sortable-item>
@@ -22,9 +22,9 @@
                         </div>
                     </div>
                 </div>
-            </mp-collapsible-column>
-
-            <mp-collapsible-column styleclass="panel-primary" title="Patrik">
+            </mp-collapsible-column >
+                
+            <mp-collapsible-column styleclass="panel-primary"  title='Patrik' >
             </mp-collapsible-column>
 
             <mp-collapsible-column styleclass="panel-primary" title="Jimmy">

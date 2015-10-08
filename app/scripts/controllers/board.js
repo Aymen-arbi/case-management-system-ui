@@ -12,12 +12,19 @@ angular.module('caseManagementSystemUiApp')
 			link: 'Overview',
 			href: '/projects/' + projectId + '/overview',
 			click: 'open()'
+		}, {
+			link: 'addStory',
+			href: '/projects/' + projectId + '/story',
+			click: 'openM()'
+
+
 		}];
 		$scope.rightLinks = [];
 
 		boardService.getStories(projectId)
 			.then(function (res) {
 				$scope.stories = res.data;
+
 			}, function (res) {
 				console.log(res);
 			});

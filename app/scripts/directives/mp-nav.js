@@ -25,13 +25,38 @@ angular.module('caseManagementSystemUiApp')
 				$scope.open = function () {
 					$modal.open({
 						animation: true,
+
+
 						templateUrl: 'views/overview-modal.html',
 						controller: 'ModalInstanceCtrl',
 						size: 'lg',
 						resolve: {
 							stories: function () {
+
 								return $scope.stories;
+
 							}
+
+
+						}
+					});
+				};
+				$scope.openM = function () {
+					$modal.open({
+						animation: true,
+
+
+						templateUrl: 'views/add-modal.html',
+						controller: 'ModalInstanceCtrl',
+						size: 'lg',
+						resolve: {
+							stories: function () {
+
+								return $scope.stories;
+
+							}
+
+
 						}
 					});
 				};

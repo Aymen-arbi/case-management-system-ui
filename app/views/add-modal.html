@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add Stroy</h3>
+</div>
+    <div class="modal-body" ng-model="story" >
+
+     <form id="addForm" ng-model="storyForm" data-ng-controller="AddModalCtrl" data-ng-init="init()" ng-submit="addStory()">
+
+            <input type="text" placeholder="Title" name="name" class="form-control" id="title" ng-model="story.name" >
+            <textarea type="text" placeholder="description" name="description" rows="5"  id="description" ng-model="story.description"></textarea>
+        </br>
+            
+            <span>Prio:</span></br>
+        <label class="radio-inline"> 
+            <input type="radio" name="low"  ng-model="story.priority" value="LOW">Low
+        </label>
+  
+        <label class="radio-inline">
+            <input type="radio" name="Normal "ng-model="story.priority" value="NORMAL" >Normal
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="high" ng-model="story.priority" value="HIGH" >High
+        </label>
+        </br>
+
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        User unassigned
+        <span class="caret"></span>
+        </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="">unassined</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Jimmy</a></li>
+                <li><a href="#"> Marcus</a></li>
+                <li><a href="#">Aymen</a></li>
+                <li><a href="#">Patrik</a></li>
+            </ul>
+        
+        <input type="submit"  ng-click="ok()"  class="btn btn-primary" >
+    </form>
+    
+    </div>
+    </div>
+</div>
+<div class="modal-footer">
+
+   <!-- <button class="btn btn-primary" type="button" ng-click="ok()">OK</button> -->
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
