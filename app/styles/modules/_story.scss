@@ -3,9 +3,21 @@
 	width:99%;
 
 	.dropdown {
-		position:absolute;
-		top:0;
-		right:0;
+		position: absolute;
+		top: -1px;
+		right: 0;
+
+		button {
+			padding: 5px 10px;
+			border: none;
+			border-left: 1px solid #eee;
+			border-bottom: 1px solid #eee;
+			background-color: white; 
+		}
+
+		a:hover {
+			cursor: pointer;
+		}
 	}
 
 	.story-header {

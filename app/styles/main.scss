@@ -5,8 +5,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "modules/_story.scss";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "modules/_nav.sass";
-@import "modules/_overview.sass";
 @import "layout/_main-app.scss";
+@import "modules/_overview.sass";
 
 body {
     background: $bg-color;

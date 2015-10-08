@@ -10,10 +10,9 @@
 			<div class="dropdown">
 				<button class="glyphicon glyphicon-cog dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					    <li><a href="#">Add</a></li>
-					    <li><a href="#">Update</a></li>
-					    <li><a href="#">Remove</a></li>
-					    <li><a href="#">Change status</a></li>
+					    <li><a ng-click="addIssue()">Add issue</a></li>					
+					    <li><a ng-click="openEdit()">Edit</a></li>
+					    <li><a ng-click="removeStory()">Remove</a></li>
 		  			</ul>
   			</div>
 			<div class="story-info"> 
