@@ -18,6 +18,7 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'as.sortable'
+    'btford.socket-io'
   ])
   .config(function ($routeProvider) {
     $routeProvider

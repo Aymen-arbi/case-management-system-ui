@@ -1,54 +1,75 @@
-.story{
+.story {
 	margin:auto;
 	width:99%;
-}
 
-.story-header {
-	margin:auto;
-	vertical-align: bottom;
-	height:20px;
-	white-space: nowrap;
-    overflow-y: hidden;
+	.dropdown {
+		position:absolute;
+		top:0;
+		right:0;
+	}
 
-    p {
+	.story-header {
+		margin:auto;
+		height:20px;
+		white-space: nowrap;
+		overflow-y: hidden;
+		p {
+			font-size: 13px;
+			font-weight: 300;
+			margin-bottom:0;
+		}
+	}
+
+	.story-info{
+		margin-top: 15px;
+		white-space: normal;
+	}
+
+	.story-status {	
+		width :40%;
+		float:right;
+		height:14px;
+		margin-top: 2px;
+
+		.progress-bar{
+			line-height: 13px;
+			font-size:11px;
+		}
+	}
+
+	.story-prio {
+		width: 30%;
+		float:right;
+		margin-top: 2px;
+	}
+
+	.story-name {
+		float : left;
+		width: 60%;
+		overflow:scroll;
+	}
+
+	.panel-body h4 {
+		font-size: 14px;
+	}
+
+	.panel-body p {
 		font-size: 13px;
-		font-weight: 300;
-		vertical-align: bottom;
-		margin-top: 1px;
+	}
+
+	.issues {
+
+		i {
+			color: #eee;
+		}
+
+		.has-issues {
+			color: $accent-color;
+			cursor: pointer;
+		}
+	}
+
+	.panel-body {
+		position:relative;
 	}
 }
-
-.story-info{
-	white-space: normal;
-}
-
-.story-status{	
-	width :40%;
-	float:right;
-	height:14px;
-	margin-top: 2px;
-	.progress-bar{
-		line-height: 13px;
-		font-size:11px;
-	}
-}
-
-.story-prio{
-	width: 40%;
-	float:right;
-}
-
-.story-name{
-	float : left;
-	width: 60%;
-	overflow:scroll;
-}
-
-.panel-body h4{
-	font-size: 14px;
-}
-
-.panel-body p{
-	font-size: 13px;
-}
-

@@ -25,6 +25,12 @@ angular.module('caseManagementSystemUiApp')
 			assignStoryToUser: function (projectId, userId, storyId) {
 				return $http.put(projectUrl + projectId + '/users/' + userId + '/stories', storyId);
 			},
+			addIssue: function (storyId, issue) {
+				return $http.post(storyUrl + storyId + '/issues', issue);
+			},
+			removeIssue: function (storyId, issueId) {
+				return $http.delete(storyUrl + storyId + '/issues/' + issueId);
+			},
 			addStory: function (id, story) {
 				return $http.post(projectUrl + id + '/stories', story);
 			},

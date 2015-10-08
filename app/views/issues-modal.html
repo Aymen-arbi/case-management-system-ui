@@ -1,0 +1,16 @@
+<div class="card">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Issues</h3>
+		</div>
+		<div class="panel-body">
+			<div class="panel panel-danger" ng-repeat="issue in story.issues">
+				<div class="panel-heading">{{issue.title}}</div>
+				<div class="panel-body">
+					<p>{{issue.description}}</p>
+					<button class="pull-right btn btn-success" ng-click="issueDone($index)">Done</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
