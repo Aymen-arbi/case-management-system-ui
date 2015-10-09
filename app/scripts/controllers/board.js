@@ -35,8 +35,7 @@ angular.module('caseManagementSystemUiApp')
 		function getAll() {
 			boardService.getStories(projectId)
 				.then(function (res) {
-					$scope.stories = res.data;
-					populateArrayStatus($scope.stories);
+					populateArrayStatus(res.data);
 				}, function (res) {
 					console.log(res);
 				});
