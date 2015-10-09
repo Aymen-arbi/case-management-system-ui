@@ -1,8 +1,17 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $routeParams, boardService, socket) {
+	.controller('BoardCtrl', function ($scope, $modal, $routeParams, boardService, socket) {
 		var projectId = $routeParams.id;
+
+		$scope.openAddModal = function () {
+			$modal.open({
+				animation: true,
+				templateUrl: '../views/add-story-modal.html',
+				controller: 'AddStoryCtrl',
+				size: 'sm'
+			});
+		};
 
 		function populateArrayStatus(array) {
 			$scope.backlog = [];

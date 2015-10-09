@@ -6,6 +6,18 @@
     min-height: 20px;
   }
 
+  .add-story-button {
+    position: relative;
+    top: -10px;
+    text-align: right;
+
+    .add-story {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   .panel-primary{
     border-color: #7986CB;
     >.panel-heading{
@@ -16,7 +28,7 @@
   }
   .panel-info{
     border-color: #5C6BC0;
-    .panel-heading{
+    >.panel-heading{
       border-color: #5C6BC0;
       background-color: #5C6BC0;
       color:white;
@@ -24,7 +36,7 @@
   } 
   .panel-danger{
     border-color: #3949AB;
-    .panel-heading{
+    >.panel-heading{
       border-color: #3949AB;
       background-color: #3949AB;
       color:white;
@@ -32,7 +44,7 @@
   } 
   .panel-success{
     border-color: #303F9F;
-    .panel-heading{
+    >.panel-heading{
       border-color: #303F9F;
       background-color: #303F9F;
       color:white;
