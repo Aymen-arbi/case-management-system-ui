@@ -25,7 +25,7 @@ angular.module('caseManagementSystemUiApp')
 		$scope.backlog = {};
 
 		$scope.left = [{
-			link: 'Back to project',
+			link: 'Back',
 			href: '/projects/' + projectId
 		}];
 
