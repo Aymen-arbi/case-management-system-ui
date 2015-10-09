@@ -39,11 +39,8 @@ angular.module('caseManagementSystemUiApp')
 			var user = data.user;
 			var story = data.story;
 
-			console.log('Hejsan');
-
 			for (var i = 0; i < $scope.backlog.length; i++) {
 				if ($scope.backlog[i] === story) {
-					console.log('Am i here?');
 					$scope.backlog.splice(i, 1);
 
 					story.user = user;
