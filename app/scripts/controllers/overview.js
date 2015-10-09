@@ -81,36 +81,27 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.dragControlListeners = {
 			itemMoved: function () {
-				var story, list, user;
+				var userToSend, storyToSend;
 
 				for (var i = 0; i < $scope.userlist.length; i++) {
-					list = $scope.userlist[i];
-					user = list.user;
+					var list = $scope.userlist[i];
+					var user = list.user;
 
 					for (var n = 0; n < list.list.length; n++) {
-						story = list.list[n];
-						break;
+						var story = list.list[n];
+						boardService.assignStoryToUser(projectId, user.userId, story.storyId);
+
+						userToSend = user;
+						storyToSend = story;
 					}
 
-					if (story !== undefined) {
-						break;
-					}
+					list.list.splice(0, 1);
 				}
 
-				if (story && list) {
-					boardService.assignStoryToUser(projectId, user.userId, story.storyId)
-						.then(function () {
-							var story = list.list[0];
-
-							socket.emit('addStoryToUser', {
-								story: story,
-								user: user
-							});
-
-							list.list.splice(0, 1);
-						});
-				}
-
+				socket.emit('addStoryToUser', {
+					user: userToSend,
+					story: storyToSend
+				});
 
 			},
 			accept: function (sourceItemHandleScope) {
