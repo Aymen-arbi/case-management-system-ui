@@ -35,6 +35,28 @@ angular.module('caseManagementSystemUiApp')
 			$scope.stories = getAll();
 		});
 
+		socket.on('addStoryToUser', function (data) {
+			var user = data.user;
+			var story = data.story;
+
+			console.log('Hejsan');
+
+			for (var i = 0; i < $scope.backlog.length; i++) {
+				if ($scope.backlog[i] === story) {
+					console.log('Am i here?');
+					$scope.backlog.splice(i, 1);
+
+					story.user = user;
+					$scope.stories.push(story);
+					return;
+				}
+			}
+
+			story.user = user;
+			$scope.stories.push(story);
+			// $scope.stories = getAll();
+		});
+
 		boardService.getBacklog(projectId)
 			.then(function (res) {
 				$scope.backlog = res.data;
@@ -59,19 +81,37 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.dragControlListeners = {
 			itemMoved: function () {
+				var story, list, user;
+
 				for (var i = 0; i < $scope.userlist.length; i++) {
-					var list = $scope.userlist[i];
-					var user = list.user;
+					list = $scope.userlist[i];
+					user = list.user;
 
 					for (var n = 0; n < list.list.length; n++) {
-						var story = list.list[n];
-						boardService.assignStoryToUser(projectId, user.userId, story.storyId);
+						story = list.list[n];
+						break;
 					}
 
-					list.list.splice(0, 1);
+					if (story !== undefined) {
+						break;
+					}
 				}
 
-				socket.emit('update stories');
+				if (story && list) {
+					boardService.assignStoryToUser(projectId, user.userId, story.storyId)
+						.then(function () {
+							var story = list.list[0];
+
+							socket.emit('addStoryToUser', {
+								story: story,
+								user: user
+							});
+
+							list.list.splice(0, 1);
+						});
+				}
+
+
 			},
 			accept: function (sourceItemHandleScope) {
 				var user = sourceItemHandleScope.$parent.story.user;
