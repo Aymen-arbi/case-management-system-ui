@@ -2,44 +2,47 @@
 <div class="scrollable-container">
 
 	<mp-collapsible-column styleclass="panel-primary" title="Backlog">
-		<div class="drag-control" as-sortable="dragControlListeners" ng-model="backlog">
-			<div ng-repeat="story in backlog" as-sortable-item>
-				 <div as-sortable-item-handle>
-					<mp-story story="story"></mp-story>
-				</div>
+	<div class="add-story-button">
+		<span class="glyphicon glyphicon-plus add-story" ng-click="openAddModal()"></span>
+	</div>
+	<div class="drag-control" as-sortable="dragControlListeners" ng-model="backlog">
+		<div ng-repeat="story in backlog" as-sortable-item>
+			<div as-sortable-item-handle>
+				<mp-story story="story"></mp-story>
 			</div>
 		</div>
-	</mp-collapsible-column>
+	</div>
+</mp-collapsible-column>
 
-	<mp-collapsible-column styleclass="panel-info" title="In Progress">
-		<div class="drag-control" as-sortable="dragControlListeners" ng-model="inProgress">
-			<div ng-repeat="story in inProgress" as-sortable-item>
-				 <div as-sortable-item-handle>
-					<mp-story story="story"></mp-story>
-				</div>
-			</div>
+<mp-collapsible-column styleclass="panel-info" title="In Progress">
+<div class="drag-control" as-sortable="dragControlListeners" ng-model="inProgress">
+	<div ng-repeat="story in inProgress" as-sortable-item>
+		<div as-sortable-item-handle>
+			<mp-story story="story"></mp-story>
 		</div>
-	</mp-collapsible-column>
+	</div>
+</div>
+</mp-collapsible-column>
 
-	<mp-collapsible-column styleclass="panel-danger" title="Test">
-		<div class="drag-control" as-sortable="dragControlListeners" ng-model="test">
-			<div ng-repeat="story in test" as-sortable-item>
-				 <div as-sortable-item-handle>
-					<mp-story story="story"></mp-story>
-				</div>
-			</div>
+<mp-collapsible-column styleclass="panel-danger" title="Test">
+<div class="drag-control" as-sortable="dragControlListeners" ng-model="test">
+	<div ng-repeat="story in test" as-sortable-item>
+		<div as-sortable-item-handle>
+			<mp-story story="story"></mp-story>
 		</div>
-	</mp-collapsible-column>
+	</div>
+</div>
+</mp-collapsible-column>
 
-	<mp-collapsible-column styleclass="panel-success" title="Done">
-		<div class="drag-control" as-sortable="dragControlListeners" ng-model="done">
-			<div ng-repeat="story in done" as-sortable-item>
-				 <div as-sortable-item-handle>
-					<mp-story story="story"></mp-story>
-				</div>
-			</div>
+<mp-collapsible-column styleclass="panel-success" title="Done">
+<div class="drag-control" as-sortable="dragControlListeners" ng-model="done">
+	<div ng-repeat="story in done" as-sortable-item>
+		<div as-sortable-item-handle>
+			<mp-story story="story"></mp-story>
 		</div>
-	</mp-collapsible-column>
+	</div>
+</div>
+</mp-collapsible-column>
 </div>
 
 

@@ -67,4 +67,19 @@ angular.module('caseManagementSystemUiApp')
 				size: 'sm'
 			});
 		};
+
+		$scope.openEdit = function () {
+			console.log('im here!');
+			$modal.open({
+				animation: true,
+				templateUrl: '../views/add-story-modal.html',
+				controller: 'EditStoryCtrl',
+				resolve: {
+					story: function () {
+						return $scope.story;
+					}
+				},
+				size: 'sm'
+			});
+		};
 	});

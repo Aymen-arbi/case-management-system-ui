@@ -6,6 +6,18 @@
     min-height: 20px;
   }
 
+  .add-story-button {
+    position: relative;
+    top: -10px;
+    text-align: right;
+
+    .add-story {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   .panel-primary{
     border-color: #7986CB;
     >.panel-heading{
