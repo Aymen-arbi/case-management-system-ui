@@ -13,8 +13,6 @@ angular.module('caseManagementSystemUiApp')
 			boardService.getStories(projectId)
 				.then(function (res) {
 					$scope.stories = res.data;
-				}, function (res) {
-					console.log(res);
 				});
 		}
 
@@ -51,7 +49,6 @@ angular.module('caseManagementSystemUiApp')
 
 			story.user = user;
 			$scope.stories.push(story);
-			// $scope.stories = getAll();
 		});
 
 		boardService.getBacklog(projectId)
@@ -63,8 +60,6 @@ angular.module('caseManagementSystemUiApp')
 			.then(function (res) {
 				$scope.teamMembers = res.data;
 				fillUserList();
-			}, function (res) {
-				console.log(res);
 			});
 
 		function fillUserList() {
