@@ -69,7 +69,6 @@ angular.module('caseManagementSystemUiApp')
 		};
 
 		$scope.openEdit = function () {
-			console.log('im here!');
 			$modal.open({
 				animation: true,
 				templateUrl: '../views/add-story-modal.html',
