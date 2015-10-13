@@ -29,8 +29,11 @@ angular
       .when('/projects/:id/overview', {
         templateUrl: 'views/overview.html',
         controller: 'OverviewCtrl'
+      }).when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .otherwise({
-        redirectTo: '/projects/'
+        redirectTo: '/login'
       });
   });
