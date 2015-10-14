@@ -1,7 +1,7 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.controller('LoginCtrl', function ($scope, boardService, loginService) {
-
+	.controller('LoginCtrl', function ($scope, $location, boardService, loginService, tokenService) {
+		var projectId = 'huryOspdl12';
 		$scope.user = {};
 		$scope.linksLeft = [{
 			link: 'Sign up',
@@ -11,8 +11,9 @@ angular.module('caseManagementSystemUiApp')
 		$scope.login = function () {
 			if ($scope.user.email && $scope.user.password) {
 				loginService.login($scope.user.email, $scope.user.password)
-					.then(function () {
-
+					.then(function (res) {
+						console.log(res.headers('Authorization'));
+						// tokenService.persistToken(res.headers('Authorization')); $location.path('/projects/' + projectId);
 					});
 			}
 		};
