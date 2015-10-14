@@ -8,7 +8,7 @@ angular.module('caseManagementSystemUiApp')
 				tokenStorage[key] = JSON.stringify(token);
 			},
 			getToken: function () {
-				return JSON.parse(key) || '""';
+				return JSON.parse(key) || '{}';
 			},
 			removeToken: function () {
 				tokenStorage.clear();
