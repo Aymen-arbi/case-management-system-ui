@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.controller('AddIssueCtrl', function ($scope, $modalInstance, story, boardService, socket) {
+	.controller('AddIssueCtrl', function ($scope, $modalInstance, story, boardService, socket, errorHandling) {
 		$scope.issue = {};
 
 		$scope.ok = function () {
@@ -10,6 +10,8 @@ angular.module('caseManagementSystemUiApp')
 					.then(function () {
 						socket.emit('update stories');
 						$scope.issue = {};
+					}, function (res) {
+						errorHandling.handleError(res);
 					});
 			}
 		};
