@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.controller('StoryCtrl', function ($scope, $modal, boardService, socket) {
+	.controller('StoryCtrl', function ($scope, $modal, boardService, socket, errorHandling) {
 		switch ($scope.story.status) {
 		case 'PENDING':
 			$scope.dynamic = 0;
@@ -51,6 +51,8 @@ angular.module('caseManagementSystemUiApp')
 			boardService.removeStory($scope.story.storyId)
 				.then(function () {
 					socket.emit('update stories');
+				}, function (res) {
+					errorHandling.handleError(res);
 				});
 		};
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $modal, $routeParams, boardService, socket) {
+	.controller('BoardCtrl', function ($scope, $modal, $routeParams, boardService, socket, errorHandling) {
 		var projectId = $routeParams.id;
 
 		$scope.openAddModal = function () {
@@ -45,6 +45,8 @@ angular.module('caseManagementSystemUiApp')
 			boardService.getStories(projectId)
 				.then(function (res) {
 					populateArrayStatus(res.data);
+				}, function (res) {
+					errorHandling.handleError(res);
 				});
 		}
 
@@ -75,7 +77,12 @@ angular.module('caseManagementSystemUiApp')
 
 				story.status = status;
 
-				boardService.updateStory(story.storyId, story);
+				boardService.updateStory(story.storyId, story)
+					.then(function () {},
+						function (res) {
+							errorHandling.handleError(res);
+						});
+
 				socket.emit('update stories');
 			}
 		};
