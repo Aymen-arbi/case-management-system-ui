@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.controller('LoginCtrl', function ($scope) {
+	.controller('LoginCtrl', function ($scope, boardService, loginService) {
 
 		$scope.user = {};
 		$scope.linksLeft = [{
@@ -9,7 +9,11 @@ angular.module('caseManagementSystemUiApp')
 		}];
 
 		$scope.login = function () {
-			// check user email and password 
-			console.log("Logged in");
+			if ($scope.user.email && $scope.user.password) {
+				loginService.login($scope.user.email, $scope.user.password)
+					.then(function () {
+
+					});
+			}
 		};
 	});
