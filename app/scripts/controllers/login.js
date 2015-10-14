@@ -12,7 +12,6 @@ angular.module('caseManagementSystemUiApp')
 			if ($scope.user.email && $scope.user.password) {
 				loginService.login($scope.user.email, $scope.user.password)
 					.then(function (res) {
-						console.log(res.headers('Authorization'));
 						tokenService.persistToken(res.headers('Authorization'));
 						$location.path('/projects/' + projectId);
 					});
