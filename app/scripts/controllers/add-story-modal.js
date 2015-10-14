@@ -1,6 +1,6 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-  .controller('AddStoryCtrl', function ($scope, $modalInstance, $routeParams, boardService, socket) {
+  .controller('AddStoryCtrl', function ($scope, $modalInstance, $routeParams, boardService, socket, errorHandling) {
 
     var projectId = $routeParams.id;
     $scope.story = {};
@@ -13,6 +13,8 @@ angular.module('caseManagementSystemUiApp')
           .then(function () {
             socket.emit('update stories');
             $scope.story = {};
+          }, function (res) {
+            errorHandling.handleError(res);
           });
 
       }

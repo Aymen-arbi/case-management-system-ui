@@ -8,11 +8,13 @@
  * Controller of the caseManagementSystemUiApp
  */
 angular.module('caseManagementSystemUiApp')
-	.controller('OverviewCtrl', function ($scope, $routeParams, boardService, socket) {
+	.controller('OverviewCtrl', function ($scope, $routeParams, boardService, socket, errorHandling) {
 		function getAll() {
 			boardService.getStories(projectId)
 				.then(function (res) {
 					$scope.stories = res.data;
+				}, function (res) {
+					errorHandling.handleError(res);
 				});
 		}
 
@@ -54,12 +56,16 @@ angular.module('caseManagementSystemUiApp')
 		boardService.getBacklog(projectId)
 			.then(function (res) {
 				$scope.backlog = res.data;
+			}, function (res) {
+				errorHandling.handleError(res);
 			});
 
 		boardService.getTeamMembers(projectId)
 			.then(function (res) {
 				$scope.teamMembers = res.data;
 				fillUserList();
+			}, function (res) {
+				errorHandling.handleError(res);
 			});
 
 		function fillUserList() {
