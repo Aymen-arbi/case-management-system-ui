@@ -3,18 +3,25 @@ angular.module('caseManagementSystemUiApp')
 	.factory('boardService', function ($http) {
 		var projectUrl = "https://127.0.0.1:8443/case-management-webservice/projects/";
 		var storyUrl = "https://127.0.0.1:8443/case-management-webservice/stories/";
+
+		var config = {
+			headers: {
+				Authorization: '3qvp6fa7ahcbcvpppsvbqnrqkt'
+			}
+		};
+
 		return {
 			getProject: function (id) {
-				return $http.get(projectUrl + id);
+				return $http.get(projectUrl + id, config);
 			},
 			getStories: function (id) {
-				return $http.get(projectUrl + id + '/stories');
+				return $http.get(projectUrl + id + '/stories', config);
 			},
 			getTeamMembers: function (id) {
-				return $http.get(projectUrl + id + '/users');
+				return $http.get(projectUrl + id + '/users', config);
 			},
 			getBacklog: function (projectId) {
-				return $http.get(projectUrl + projectId + '/backlog');
+				return $http.get(projectUrl + projectId + '/backlog', config);
 			},
 			getTeamMembersStories: function (projectId, userId) {
 				return $http.get(projectUrl + projectId + '/users/' + userId + '/stories');
