@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('caseManagementSystemUiApp')
-	.controller('BoardCtrl', function ($scope, $modal, $routeParams, boardService, socket, errorHandling) {
+	.controller('BoardCtrl', function ($scope, $modal, $location, $routeParams, boardService, socket, errorHandling, authService) {
 		var projectId = $routeParams.id;
 
 		$scope.openAddModal = function () {
@@ -54,13 +54,22 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.leftLinks = [{
 			link: 'Home',
-			href: ' '
 		}, {
 			link: 'Overview',
-			href: '/projects/' + projectId + '/overview'
+			click: function () {
+				$location.path('/projects/' + projectId + '/overview');
+			}
 		}];
 
-		$scope.rightLinks = [];
+		$scope.rightLinks = [{
+			link: 'Sign out',
+			click: function () {
+				authService.logout()
+					.then(function () {
+						$location.path('/login');
+					});
+			}
+		}];
 
 		socket.on('update stories', function () {
 			getAll();

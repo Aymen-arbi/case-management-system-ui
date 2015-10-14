@@ -11,7 +11,8 @@ angular.module('caseManagementSystemUiApp')
 		return {
 			scope: {
 				left: '=',
-				right: '='
+				right: '=',
+				click: '&'
 			},
 
 			templateUrl: 'views/nav.html',

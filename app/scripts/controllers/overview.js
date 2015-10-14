@@ -8,7 +8,7 @@
  * Controller of the caseManagementSystemUiApp
  */
 angular.module('caseManagementSystemUiApp')
-	.controller('OverviewCtrl', function ($scope, $routeParams, boardService, socket, errorHandling) {
+	.controller('OverviewCtrl', function ($scope, $location, $routeParams, boardService, socket, errorHandling) {
 		function getAll() {
 			boardService.getStories(projectId)
 				.then(function (res) {
@@ -26,7 +26,9 @@ angular.module('caseManagementSystemUiApp')
 
 		$scope.left = [{
 			link: 'Back',
-			href: '/projects/' + projectId
+			click: function () {
+				$location.path('/projects/' + projectId);
+			}
 		}];
 
 		getAll();

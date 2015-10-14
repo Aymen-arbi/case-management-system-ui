@@ -15,10 +15,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-brand-centered">
       <ul class="nav navbar-nav pull-left">
-        <li ng-repeat="link in left"><a href="#{{link.href}}">{{link.link}}</a></li>
+        <li ng-repeat="link in left" ng-click="link.click()"><a>{{link.link}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-repeat="link in right"><a href="#{{link.href}}">{{link.link}}</a></li>
+        <li ng-repeat="link in right" ng-click="link.click()"><a>{{link.link}}</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
