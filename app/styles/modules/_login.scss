@@ -2,22 +2,22 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 70px;
-}
+	
+	.login-input {
+		width: 30vw;
+		min-width: 145px;
+	}
 
-.login-input {
-	width: 30vw;
-	min-width: 145px;
-}
+	.username {
+		margin-bottom: 10px;
+	}
 
-.username {
-	margin-bottom: 10px;
-}
+	button {
+		float: right;
+		margin-top: 10px;
+	}
 
-button {
-	float: right;
-	margin-top: 10px;
-}
-
-::-webkit-input-placeholder {
-	text-align: center;
+	::-webkit-input-placeholder {
+		text-align: center;
+	}
 }
