@@ -1,54 +1,48 @@
 'use strict';
 angular.module('caseManagementSystemUiApp')
-	.factory('boardService', function ($http, tokenService) {
+	.factory('boardService', function ($http) {
 		var projectUrl = "https://127.0.0.1:8443/case-management-webservice/projects/";
 		var storyUrl = "https://127.0.0.1:8443/case-management-webservice/stories/";
-		var token = tokenService.getToken();
-		var config = {
-			headers: {
-				Authorization: token.token
-			}
-		};
 
 		return {
 			getProject: function (id) {
-				return $http.get(projectUrl + id, config);
+				return $http.get(projectUrl + id);
 			},
 			getStories: function (id) {
-				return $http.get(projectUrl + id + '/stories', config);
+				return $http.get(projectUrl + id + '/stories');
 			},
 			getTeamMembers: function (id) {
-				return $http.get(projectUrl + id + '/users', config);
+				return $http.get(projectUrl + id + '/users');
 			},
 			getBacklog: function (projectId) {
-				return $http.get(projectUrl + projectId + '/backlog', config);
+				return $http.get(projectUrl + projectId + '/backlog');
 			},
 			getTeamMembersStories: function (projectId, userId) {
-				return $http.get(projectUrl + projectId + '/users/' + userId + '/stories', config);
+				return $http.get(projectUrl + projectId + '/users/' + userId + '/stories');
 			},
 			addTeamMember: function (projectId, teammember) {
-				return $http.put(projectUrl + projectId + '/users', teammember, config);
+				return $http.put(projectUrl + projectId + '/users', teammember);
 			},
 			removeTeamMember: function (projectId, userId) {
-				return $http.put(projectUrl + projectId + '/users/' + userId, config);
+				return $http.put(projectUrl + projectId + '/users/' + userId);
 			},
 			assignStoryToUser: function (projectId, userId, storyId) {
-				return $http.put(projectUrl + projectId + '/users/' + userId + '/stories', storyId, config);
+				return $http.put(projectUrl + projectId + '/users/' + userId + '/stories', storyId);
 			},
 			addIssue: function (storyId, issue) {
-				return $http.post(storyUrl + storyId + '/issues', issue, config);
+				return $http.post(storyUrl + storyId + '/issues', issue);
 			},
 			removeIssue: function (storyId, issueId) {
-				return $http.delete(storyUrl + storyId + '/issues/' + issueId, config);
+				return $http.delete(storyUrl + storyId + '/issues/' + issueId);
 			},
 			addStory: function (id, story) {
-				return $http.post(projectUrl + id + '/stories', story, config);
+				return $http.post(projectUrl + id + '/stories', story);
 			},
 			updateStory: function (storyId, story) {
-				return $http.put(storyUrl + storyId, story, config);
+				return $http.put(storyUrl + storyId, story);
 			},
 			removeStory: function (storyId) {
-				return $http.delete(storyUrl + storyId, config);
+				return $http.delete(storyUrl + storyId);
 			}
 		};
 	});
