@@ -1,10 +1,11 @@
 <mp-nav left="linksLeft" right=""></mp-nav>
 <div class="login">
-	<form class="simple-form" ng-submit="login()">
-		<input type="text" ng-pattern="email-check" class="form-control login-input username" ng-model="user.email" placeholder="Email" ng-keyup="$event.keyCode == 13">
+	<form name="login" class="simple-form">
+		<input type="text" ng-pattern="emailCheck" class="form-control login-input username" ng-model="user.email" placeholder="Email" ng-keyup="$event.keyCode == 13">
 		<input class="form-control password login-input" type="password" ng-model="user.password" placeholder="password" ng-keyup="$event.keyCode == 13">
+		{{login.$error}}
 		<p ng-show="bad">wrong password or email</p>
-		<input  class="btn btn-success"  type="submit" value="Log in" >
+		<button class="btn btn-success" ng-click="">Log in</button>
 	</form>
 </div>
 
