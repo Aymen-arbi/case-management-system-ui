@@ -24,12 +24,13 @@ angular
     $routeProvider
       .when('/projects/:id', {
         templateUrl: 'views/board.html',
-        controller: 'BoardCtrl'
+        controller: 'BoardCtrl',
       })
       .when('/projects/:id/overview', {
         templateUrl: 'views/overview.html',
         controller: 'OverviewCtrl'
-      }).when('/login', {
+      })
+      .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
