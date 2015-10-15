@@ -14,7 +14,13 @@ angular.module('caseManagementSystemUiApp')
 					.then(function (res) {
 						tokenService.persistToken(res.headers('Authorization'));
 						$location.path('/projects/' + projectId);
+					}, function (res) {
+						if (res.status === 400) {
+							$scope.user.password = '';
+							$scope.bad = true;
+						}
 					});
+
 			}
 		};
 	});
