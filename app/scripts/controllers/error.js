@@ -8,12 +8,15 @@
  * Controller of the caseManagementSystemUiApp
  */
 angular.module('caseManagementSystemUiApp')
-	.controller('ErrorCtrl', function ($scope, $location) {
-		var projectId = 'huryOspdl12';
+	.controller('ErrorCtrl', function ($scope, $location, socket) {
+		var id = 'huryOspdl12';
 		$scope.leftLinks = [{
 			link: 'Home',
 			click: function () {
-				$location.path('projects/' + projectId);
+				$location.path('projects/' + id);
+				socket.emit('path param', {
+					param: id
+				});
 			}
 		}];
 	});

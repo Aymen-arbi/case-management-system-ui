@@ -15,6 +15,7 @@ angular.module('caseManagementSystemUiApp')
 					.then(function (res) {
 						tokenService.persistToken(res.headers('Authorization'));
 						$location.path('/projects/' + projectId);
+						$location.replace();
 					}, function (res) {
 						if (res.status === 401) {
 							$scope.user.password = '';

@@ -75,6 +75,10 @@ angular.module('caseManagementSystemUiApp')
 			getAll();
 		});
 
+		socket.on('path param', function (data) {
+			projectId = data.param;
+		});
+
 		$scope.dragControlListeners = {
 			itemMoved: function (event) {
 				var story = event.source.itemScope.story;
