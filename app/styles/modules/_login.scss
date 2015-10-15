@@ -12,16 +12,21 @@
 		margin-bottom: 10px;
 	}
 
-	input[type="submit"] {
+	button {
 		float: right;
-		margin-top: 0px;
+		margin-top: 10px;
 	}
 
 	::-webkit-input-placeholder {
 		text-align: center;
 	}
-	p{
-	color: red;
-	position: absolute;
+
+	p {
+		color: red;
+		position: absolute;
+	}
+
+	.email-error {
+		border-color: red;
 	}
 }

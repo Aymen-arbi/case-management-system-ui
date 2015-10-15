@@ -10,18 +10,19 @@ angular.module('caseManagementSystemUiApp')
 		}];
 
 		$scope.login = function () {
-			if (!$scope.login.$error) {
+			if (!$scope.loginForm.$error.pattern) {
 				authService.login($scope.user.email, $scope.user.password)
 					.then(function (res) {
 						tokenService.persistToken(res.headers('Authorization'));
 						$location.path('/projects/' + projectId);
 					}, function (res) {
-						if (res.status === 400) {
+						if (res.status === 401) {
 							$scope.user.password = '';
-							$scope.bad = true;
+							$scope.toggleWrongCredentials = true;
 						}
 					});
-
+			} else {
+				$scope.toggleUsername = true;
 			}
 		};
 	});
