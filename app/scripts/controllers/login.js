@@ -5,7 +5,7 @@ angular.module('caseManagementSystemUiApp')
 		$scope.user = {};
 		$scope.linksLeft = [{
 			link: 'Sign up',
-			href: ' '
+			click: function () {}
 		}];
 
 		$scope.login = function () {
